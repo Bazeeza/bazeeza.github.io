@@ -72,6 +72,10 @@ ul,ol{list-style:none}
   pointer-events:none;
 }
 .hero .wrap{position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:var(--space-6);align-items:center}
+.hero-art{width:300px;height:auto}
+/* The illustration is decorative (alt=""): dropped on narrow screens to keep the text first */
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-art{display:none}}
 .eyebrow{
   font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-green);
   letter-spacing:.08em;margin-bottom:var(--space-5);display:flex;align-items:center;gap:var(--space-3);
