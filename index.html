@@ -10,10 +10,12 @@
 </head>
 <body>
 
-<div class="statusbar">
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="statusbar">
   <div class="wrap">
     <span class="mono"><span class="dot">●</span> bazeeza@montreal:~$ <span class="cmd">whoami</span></span>
-    <nav class="nav-links mono">
+    <nav class="nav-links mono" aria-label="Sections de la page">
       <a href="#about">./about</a>
       <a href="#skills">./skills</a>
       <a href="#projects">./projects</a>
@@ -21,12 +23,14 @@
       <a href="#contact">./contact</a>
     </nav>
   </div>
-</div>
+</header>
 
-<header class="hero">
+<main id="main" tabindex="-1">
+
+<section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="eyebrow mono"><span class="pulse"></span> LINK STATUS: UP · MONTRÉAL, QC</div>
-    <h1>bazeeza
+    <h1 id="hero-title">bazeeza
       <span class="role">Technicien en télécommunication</span>
     </h1>
     <p class="lede">Finissant en réseautique au Collège de Rosemont, avec une expérience concrète en téléphonie IP. Je monte des serveurs téléphoniques FreePBX, je configure des réseaux Cisco, et je documente chaque procédure. Permis Classe 5, disponible et flexible.</p>
@@ -36,14 +40,14 @@
       <a class="btn" href="mailto:info@bazeeza.ca?subject=Demande%20de%20CV">CV sur demande ✉</a>
     </div>
   </div>
-</header>
+</section>
 
-<section id="about">
+<section id="about" aria-labelledby="about-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">01</span>
-      <span class="sec-title">À propos</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">01</span>
+      <h2 class="sec-title" id="about-title">À propos</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
     <div class="about-grid">
       <div>
@@ -63,12 +67,12 @@
   </div>
 </section>
 
-<section id="skills">
+<section id="skills" aria-labelledby="skills-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">02</span>
-      <span class="sec-title">Compétences</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">02</span>
+      <h2 class="sec-title" id="skills-title">Compétences</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
     <div class="skills-grid">
       <div class="skill-card">
@@ -103,17 +107,17 @@
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" aria-labelledby="projects-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">03</span>
-      <span class="sec-title">Projets</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">03</span>
+      <h2 class="sec-title" id="projects-title">Projets</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</div>
+        <h3 class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</h3>
         <div class="proj-meta">école · téléphonie</div>
       </div>
       <p>Installation et configuration d'un serveur de téléphonie IP <strong>FreePBX</strong> dans un environnement virtualisé Proxmox : mise en place d'un plan de numérotation et tentative d'interconnexion entre deux réseaux distants. Projet directement lié aux services de téléphonie installés sur le terrain.</p>
@@ -125,7 +129,7 @@
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">Architecture réseau &amp; supervision — Cisco</div>
+        <h3 class="proj-title">Architecture réseau &amp; supervision — Cisco</h3>
         <div class="proj-meta">2024 · matériel physique</div>
       </div>
       <p>Configuration complète d'un routeur et d'un commutateur Cisco physiques : serveur DHCP avec relais, NAT, VLAN (802.1Q) et supervision <strong>SNMP</strong> pour l'inventaire des équipements. Rédaction d'un runbook technique détaillé avec procédures reproductibles étape par étape.</p>
@@ -138,7 +142,7 @@
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">Infrastructure automatisée sur AWS — Terraform</div>
+        <h3 class="proj-title">Infrastructure automatisée sur AWS — Terraform</h3>
         <div class="proj-meta">équipe · AutomationHub</div>
       </div>
       <p>Déploiement automatisé d'infrastructure sur AWS à l'aide de scripts <strong>Terraform</strong> et de conteneurs Docker, incluant un serveur sécurisé de gestion de mots de passe. Documentation complète des procédures de déploiement (tutoriel reproductible).</p>
@@ -151,7 +155,7 @@
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">TryHackMe Badge Finder — site web</div>
+        <h3 class="proj-title">TryHackMe Badge Finder — site web</h3>
         <div class="proj-meta">2026 · en ligne</div>
       </div>
       <p>Site statique qui associe chacun des <strong>138 badges</strong> de TryHackMe à la salle qui le débloque : recherche, filtres et suivi de progression stocké dans le navigateur. Données vérifiées contre l'API publique de TryHackMe, publié sur GitHub Pages.</p>
@@ -164,34 +168,34 @@
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" aria-labelledby="experience-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">04</span>
-      <span class="sec-title">Expérience</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">04</span>
+      <h2 class="sec-title" id="experience-title">Expérience</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
     <div class="exp">
       <div class="exp-item now">
-        <div class="exp-role">Agent — Centre d'opérations (SOC), centre de données</div>
+        <h3 class="exp-role">Agent — Centre d'opérations (SOC), centre de données</h3>
         <div class="exp-org">Centre de données · Montréal</div>
         <div class="exp-date mono">Oct. 2023 – présent</div>
         <p>Surveillance d'un centre de données critique 24/7 : contrôle d'accès, monitoring des systèmes et application des protocoles de sécurité de l'infrastructure. Coordination avec les équipes techniques et rapports d'incidents.</p>
       </div>
       <div class="exp-item">
-        <div class="exp-role">Agent de support technique bilingue</div>
+        <h3 class="exp-role">Agent de support technique bilingue</h3>
         <div class="exp-org">Commerce en ligne</div>
         <div class="exp-date mono">Sept. 2022 – Sept. 2023</div>
         <p>Support technique niveau 1 bilingue (FR/EN) : diagnostic et résolution de problèmes de comptes, commandes et paiements. Documentation des incidents, suivi jusqu'à résolution et escalade des cas complexes.</p>
       </div>
       <div class="exp-item">
-        <div class="exp-role">Agent de sécurité</div>
+        <h3 class="exp-role">Agent de sécurité</h3>
         <div class="exp-org">Environnement corporatif</div>
         <div class="exp-date mono">Mars 2023 – Oct. 2025</div>
         <p>Surveillance et application des protocoles en environnement corporatif. Service à la clientèle, gestion d'incidents et production de rapports.</p>
       </div>
       <div class="exp-item">
-        <div class="exp-role">Commis d'entrepôt · Cuisinier / Caissier</div>
+        <h3 class="exp-role">Commis d'entrepôt · Cuisinier / Caissier</h3>
         <div class="exp-org">Entrepôt de commerce en ligne · parc d'attractions</div>
         <div class="exp-date mono">2019 – 2023</div>
         <p>Gestion d'inventaire, traitement de commandes à haut volume et service à la clientèle en environnement sous pression.</p>
@@ -201,9 +205,11 @@
   </div>
 </section>
 
-<footer id="contact">
+</main>
+
+<footer id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <h2>On se connecte ?</h2>
+    <h2 id="contact-title">On se connecte ?</h2>
     <p>Ouvert aux opportunités de technicien en télécommunication dans la région de Montréal. Disponible et flexible.</p>
     <div class="foot-links">
       <a class="btn primary" href="mailto:info@bazeeza.ca">✉ info@bazeeza.ca</a>
