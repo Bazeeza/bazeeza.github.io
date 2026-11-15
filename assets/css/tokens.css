@@ -27,8 +27,9 @@
   --color-violet:#c792ea;      /* supervision, secondary highlight */
 
   /* Typography */
-  --font-sans:'Space Grotesk',system-ui,sans-serif;
-  --font-mono:'JetBrains Mono',monospace;
+  /* System font stacks: same families as the profile banner, no web font download */
+  --font-sans:'Segoe UI',system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif;
+  --font-mono:Consolas,'Cascadia Mono','SFMono-Regular',Menlo,'Liberation Mono',monospace;
   --text-xs:.75rem;      /* 12 px */
   --text-sm:.875rem;     /* 14 px */
   --text-base:1rem;      /* 16 px */
