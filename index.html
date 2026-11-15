@@ -5,157 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>bazeeza — Technicien en télécommunication</title>
 <meta name="description" content="Portfolio de bazeeza — technicien en télécommunication. Téléphonie IP (FreePBX), réseaux Cisco, infrastructure et supervision.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0f14;
-    --panel:#111820;
-    --panel-2:#0e141b;
-    --line:#1e2a35;
-    --ink:#e6edf3;
-    --muted:#8b99a8;
-    --dim:#5d6b7a;
-    --accent:#3fe0a0;      /* signal green — link-up */
-    --accent-2:#2b9dff;    /* packet blue */
-    --amber:#ffb454;
-    --radius:4px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Space Grotesk',system-ui,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  .mono{font-family:'JetBrains Mono',monospace}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
-
-  /* ---- top status bar ---- */
-  .statusbar{
-    border-bottom:1px solid var(--line);
-    background:var(--panel-2);
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    color:var(--dim);
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(6px);
-  }
-  .statusbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
-  .statusbar .dot{color:var(--accent)}
-  .nav-links{display:flex;gap:20px}
-  .nav-links a{color:var(--muted);transition:color .2s}
-  .nav-links a:hover{color:var(--accent)}
-  @media(max-width:620px){.nav-links{display:none}}
-
-  /* ---- hero ---- */
-  .hero{padding:90px 0 70px;border-bottom:1px solid var(--line);position:relative}
-  .hero::before{
-    content:"";position:absolute;inset:0;
-    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-    background-size:44px 44px;
-    opacity:.15;
-    -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 0%,#000 40%,transparent 100%);
-            mask-image:radial-gradient(ellipse 70% 80% at 50% 0%,#000 40%,transparent 100%);
-    pointer-events:none;
-  }
-  .hero .wrap{position:relative}
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);
-    letter-spacing:.08em;margin-bottom:20px;display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,224,160,.5)}70%{box-shadow:0 0 0 8px rgba(63,224,160,0)}100%{box-shadow:0 0 0 0 rgba(63,224,160,0)}}
-  h1{font-size:clamp(34px,6vw,60px);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:18px}
-  h1 .role{display:block;color:var(--accent);font-size:clamp(18px,3vw,26px);font-weight:500;margin-top:12px;letter-spacing:0}
-  .lede{color:var(--muted);font-size:18px;max-width:600px;margin-bottom:32px}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-  .btn{
-    font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;
-    padding:11px 20px;border-radius:var(--radius);border:1px solid var(--line);
-    background:var(--panel);color:var(--ink);transition:all .2s;cursor:pointer;
-    display:inline-flex;align-items:center;gap:8px;
-  }
-  .btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-  .btn.primary{background:var(--accent);color:#04140d;border-color:var(--accent);font-weight:700}
-  .btn.primary:hover{background:#54f0b3;color:#04140d}
-
-  /* ---- section framing ---- */
-  section{padding:70px 0;border-bottom:1px solid var(--line)}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:38px}
-  .sec-num{font-family:'JetBrains Mono',monospace;color:var(--accent-2);font-size:14px}
-  .sec-title{font-size:26px;font-weight:600;letter-spacing:-.01em}
-  .sec-line{flex:1;height:1px;background:var(--line)}
-
-  /* ---- about / skills grid ---- */
-  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
-  @media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:32px}}
-  .about-grid p{color:var(--muted);margin-bottom:16px}
-  .about-grid strong{color:var(--ink);font-weight:600}
-  .facts{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden}
-  .facts .row{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-size:14px}
-  .facts .row:last-child{border-bottom:none}
-  .facts .k{font-family:'JetBrains Mono',monospace;color:var(--dim)}
-  .facts .v{color:var(--ink);text-align:right}
-  .facts .v.up{color:var(--accent)}
-
-  /* ---- skills ---- */
-  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  @media(max-width:720px){.skills-grid{grid-template-columns:1fr}}
-  .skill-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:20px}
-  .skill-card h3{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);margin-bottom:14px;letter-spacing:.04em;text-transform:uppercase}
-  .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:5px 10px;border:1px solid var(--line);border-radius:3px;color:var(--muted);background:var(--panel-2)}
-
-  /* ---- projects ---- */
-  .project{
-    border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
-    padding:28px;margin-bottom:20px;transition:border-color .2s;position:relative;overflow:hidden;
-  }
-  .project:hover{border-color:var(--accent-2)}
-  .project::after{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent-2);opacity:.6}
-  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px}
-  .proj-title{font-size:20px;font-weight:600}
-  .proj-meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);white-space:nowrap;padding-top:5px}
-  .project p{color:var(--muted);font-size:15px;margin-bottom:16px}
-  .proj-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
-  .proj-link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);display:inline-flex;align-items:center;gap:7px;transition:gap .2s}
-  .proj-link:hover{gap:12px}
-
-  /* ---- experience ---- */
-  .exp{position:relative;padding-left:28px}
-  .exp::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line)}
-  .exp-item{position:relative;padding-bottom:30px}
-  .exp-item:last-child{padding-bottom:0}
-  .exp-item::before{content:"";position:absolute;left:-25px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent-2)}
-  .exp-item.now::before{background:var(--accent);border-color:var(--accent)}
-  .exp-role{font-size:17px;font-weight:600}
-  .exp-org{color:var(--accent-2);font-size:14px;margin:2px 0 2px}
-  .exp-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);margin-bottom:8px}
-  .exp-item p{color:var(--muted);font-size:14.5px}
-
-  /* ---- footer ---- */
-  footer{padding:60px 0 70px;text-align:center}
-  footer h2{font-size:24px;margin-bottom:12px}
-  footer p{color:var(--muted);margin-bottom:26px}
-  .foot-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-  .foot-meta{margin-top:40px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim)}
-
-  ::selection{background:var(--accent);color:#04140d}
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
-</style>
+<meta name="theme-color" content="#070d1c">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
-<div class="statusbar">
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="statusbar">
   <div class="wrap">
-    <span class="mono"><span class="dot">●</span> bazeeza@montreal:~$ <span style="color:var(--muted)">whoami</span></span>
-    <nav class="nav-links mono">
+    <span class="mono"><span class="dot" aria-hidden="true">●</span> bazeeza@montreal:~$ <span class="cmd">whoami</span></span>
+    <nav class="nav-links mono" aria-label="Sections de la page">
       <a href="#about">./about</a>
       <a href="#skills">./skills</a>
       <a href="#projects">./projects</a>
@@ -163,29 +25,34 @@
       <a href="#contact">./contact</a>
     </nav>
   </div>
-</div>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow mono"><span class="pulse"></span> LINK STATUS: UP · MONTRÉAL, QC</div>
-    <h1>bazeeza
-      <span class="role">Technicien en télécommunication</span>
-    </h1>
-    <p class="lede">Finissant en réseautique au Collège de Rosemont, avec une expérience concrète en téléphonie IP. Je monte des serveurs téléphoniques FreePBX, je configure des réseaux Cisco, et je documente chaque procédure. Permis Classe 5, disponible et flexible.</p>
-    <div class="cta-row">
-      <a class="btn primary" href="#projects">▸ Voir mes projets</a>
-      <a class="btn" href="https://github.com/Bazeeza" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn" href="mailto:info@bazeeza.ca?subject=Demande%20de%20CV">CV sur demande ✉</a>
-    </div>
-  </div>
 </header>
 
-<section id="about">
+<main id="main" tabindex="-1">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow mono"><span class="pulse" aria-hidden="true"></span> LINK STATUS: UP · MONTRÉAL, QC</p>
+      <h1 id="hero-title">bazeeza
+        <span class="role">Technicien en télécommunication</span>
+      </h1>
+      <p class="lede">Finissant en réseautique au Collège de Rosemont, avec une expérience concrète en téléphonie IP. Je monte des serveurs téléphoniques FreePBX, je configure des réseaux Cisco, et je documente chaque procédure. Permis Classe 5, disponible et flexible.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#projects"><span aria-hidden="true">▸</span> Voir mes projets</a>
+        <a class="btn" href="https://github.com/Bazeeza" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+        <a class="btn" href="mailto:info@bazeeza.ca?subject=Demande%20de%20CV">CV sur demande <span aria-hidden="true">✉</span></a>
+      </div>
+    </div>
+    <img class="hero-art" src="assets/img/topologie.svg" width="320" height="260" alt="">
+  </div>
+</section>
+
+<section id="about" aria-labelledby="about-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">01</span>
-      <span class="sec-title">À propos</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">01</span>
+      <h2 class="sec-title" id="about-title">À propos</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
     <div class="about-grid">
       <div>
@@ -193,165 +60,167 @@
         <p>Ce que j'aime, c'est comprendre comment les choses sont connectées — du câblage physique d'un routeur Cisco jusqu'au montage d'un serveur téléphonique qui relie deux réseaux distants. Je documente mon travail sous forme de <strong>runbooks</strong> reproductibles, parce qu'une installation qu'on ne peut pas reproduire n'est faite qu'à moitié.</p>
         <p>Je vise le poste de <strong>technicien en télécommunication</strong> : installation et réparation des services de téléphonie, d'internet et de fibre. Disponible et flexible, permis Classe 5.</p>
       </div>
-      <div class="facts mono">
-        <div class="row"><span class="k">Formation</span><span class="v">DEC Réseautique (dernière année) · Collège de Rosemont</span></div>
-        <div class="row"><span class="k">Téléphonie IP</span><span class="v up">FreePBX</span></div>
-        <div class="row"><span class="k">Langues</span><span class="v">FR · EN · Yoruba</span></div>
-        <div class="row"><span class="k">Permis</span><span class="v up">Classe 5 + 6A</span></div>
-        <div class="row"><span class="k">Habilitation</span><span class="v up">fédérale · sur demande</span></div>
-        <div class="row"><span class="k">Localisation</span><span class="v">Montréal, QC</span></div>
-        <div class="row"><span class="k">Disponibilité</span><span class="v up">jours · soirs · fins de sem.</span></div>
-      </div>
+      <dl class="facts mono">
+        <div class="row"><dt class="k">Formation</dt><dd class="v">DEC Réseautique (dernière année) · Collège de Rosemont</dd></div>
+        <div class="row"><dt class="k">Téléphonie IP</dt><dd class="v up">FreePBX</dd></div>
+        <div class="row"><dt class="k">Langues</dt><dd class="v">FR · EN · Yoruba</dd></div>
+        <div class="row"><dt class="k">Permis</dt><dd class="v up">Classe 5 + 6A</dd></div>
+        <div class="row"><dt class="k">Localisation</dt><dd class="v">Montréal, QC</dd></div>
+        <div class="row"><dt class="k">Disponibilité</dt><dd class="v up">jours · soirs · fins de sem.</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<section id="skills" aria-labelledby="skills-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">02</span>
-      <span class="sec-title">Compétences</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">02</span>
+      <h2 class="sec-title" id="skills-title">Compétences</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
     <div class="skills-grid">
       <div class="skill-card">
-        <h3>// Téléphonie IP</h3>
-        <div class="tags">
-          <span class="tag">FreePBX</span><span class="tag">VoIP</span><span class="tag">SIP</span>
-          <span class="tag">Plan de numérotation</span><span class="tag">Proxmox</span>
-        </div>
+        <h3><span aria-hidden="true">// </span>Téléphonie IP</h3>
+        <ul class="tags">
+          <li class="tag">FreePBX</li><li class="tag">VoIP</li><li class="tag">SIP</li>
+          <li class="tag">Plan de numérotation</li><li class="tag">Proxmox</li>
+        </ul>
       </div>
       <div class="skill-card">
-        <h3>// Réseautique</h3>
-        <div class="tags">
-          <span class="tag">Cisco IOS</span><span class="tag">VLAN 802.1Q</span><span class="tag">NAT</span>
-          <span class="tag">DHCP</span><span class="tag">Interconnexion réseaux</span><span class="tag">TCP/IP</span>
-        </div>
+        <h3><span aria-hidden="true">// </span>Réseautique</h3>
+        <ul class="tags">
+          <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT</li>
+          <li class="tag">DHCP</li><li class="tag">Interconnexion réseaux</li><li class="tag">TCP/IP</li>
+        </ul>
       </div>
       <div class="skill-card">
-        <h3>// Systèmes &amp; infrastructure</h3>
-        <div class="tags">
-          <span class="tag">Windows Server</span><span class="tag">Linux / Ubuntu</span><span class="tag">AWS</span>
-          <span class="tag">Docker</span><span class="tag">Terraform</span>
-        </div>
+        <h3><span aria-hidden="true">// </span>Systèmes &amp; infrastructure</h3>
+        <ul class="tags">
+          <li class="tag">Windows Server</li><li class="tag">Linux / Ubuntu</li><li class="tag">AWS</li>
+          <li class="tag">Docker</li><li class="tag">Terraform</li>
+        </ul>
       </div>
       <div class="skill-card">
-        <h3>// Terrain &amp; service</h3>
-        <div class="tags">
-          <span class="tag">Installation d'équipements</span><span class="tag">Service client</span>
-          <span class="tag">Travail en hauteur</span><span class="tag">Santé-sécurité</span><span class="tag">Git</span>
-        </div>
+        <h3><span aria-hidden="true">// </span>Terrain &amp; service</h3>
+        <ul class="tags">
+          <li class="tag">Installation d'équipements</li><li class="tag">Service client</li>
+          <li class="tag">Travail en hauteur</li><li class="tag">Santé-sécurité</li><li class="tag">Git</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" aria-labelledby="projects-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">03</span>
-      <span class="sec-title">Projets</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">03</span>
+      <h2 class="sec-title" id="projects-title">Projets</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</div>
-        <div class="proj-meta">école · téléphonie</div>
+        <h3 class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</h3>
+        <p class="proj-meta">école · téléphonie</p>
       </div>
-      <p>Installation et configuration d'un serveur de téléphonie IP <strong style="color:var(--ink)">FreePBX</strong> dans un environnement virtualisé Proxmox : mise en place d'un plan de numérotation et tentative d'interconnexion entre deux réseaux distants. Projet directement lié aux services de téléphonie installés sur le terrain.</p>
-      <div class="proj-tags">
-        <span class="tag">FreePBX</span><span class="tag">Proxmox</span><span class="tag">VoIP</span>
-        <span class="tag">SIP</span><span class="tag">Interconnexion réseaux</span>
-      </div>
+      <p>Installation et configuration d'un serveur de téléphonie IP <strong>FreePBX</strong> dans un environnement virtualisé Proxmox : mise en place d'un plan de numérotation et tentative d'interconnexion entre deux réseaux distants. Projet directement lié aux services de téléphonie installés sur le terrain.</p>
+      <ul class="tags proj-tags" aria-label="Technologies">
+        <li class="tag">FreePBX</li><li class="tag">Proxmox</li><li class="tag">VoIP</li>
+        <li class="tag">SIP</li><li class="tag">Interconnexion réseaux</li>
+      </ul>
     </article>
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">Architecture réseau &amp; supervision — Cisco</div>
-        <div class="proj-meta">2024 · matériel physique</div>
+        <h3 class="proj-title">Architecture réseau &amp; supervision — Cisco</h3>
+        <p class="proj-meta">2024 · matériel physique</p>
       </div>
-      <p>Configuration complète d'un routeur et d'un commutateur Cisco physiques : serveur DHCP avec relais, NAT, VLAN (802.1Q) et supervision <strong style="color:var(--ink)">SNMP</strong> pour l'inventaire des équipements. Rédaction d'un runbook technique détaillé avec procédures reproductibles étape par étape.</p>
-      <div class="proj-tags">
-        <span class="tag">Cisco IOS</span><span class="tag">DHCP</span><span class="tag">NAT</span>
-        <span class="tag">VLAN</span><span class="tag">SNMP</span><span class="tag">Runbook</span>
-      </div>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks" target="_blank" rel="noopener">voir le runbook →</a>
+      <p>Configuration complète d'un routeur et d'un commutateur Cisco physiques : serveur DHCP avec relais, NAT, VLAN (802.1Q) et supervision <strong>SNMP</strong> pour l'inventaire des équipements. Rédaction d'un runbook technique détaillé avec procédures reproductibles étape par étape.</p>
+      <ul class="tags proj-tags" aria-label="Technologies">
+        <li class="tag">Cisco IOS</li><li class="tag">DHCP</li><li class="tag">NAT</li>
+        <li class="tag">VLAN</li><li class="tag">SNMP</li><li class="tag">Runbook</li>
+      </ul>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks" target="_blank" rel="noopener">voir le runbook <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">Infrastructure automatisée sur AWS — Terraform</div>
-        <div class="proj-meta">équipe · AutomationHub</div>
+        <h3 class="proj-title">Infrastructure automatisée sur AWS — Terraform</h3>
+        <p class="proj-meta">équipe · AutomationHub</p>
       </div>
-      <p>Déploiement automatisé d'infrastructure sur AWS à l'aide de scripts <strong style="color:var(--ink)">Terraform</strong> et de conteneurs Docker, incluant un serveur sécurisé de gestion de mots de passe. Documentation complète des procédures de déploiement (tutoriel reproductible).</p>
-      <div class="proj-tags">
-        <span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">Docker</span>
-        <span class="tag">EC2</span><span class="tag">VPC</span>
-      </div>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/AutomationHub" target="_blank" rel="noopener">voir le dépôt →</a>
+      <p>Déploiement automatisé d'infrastructure sur AWS à l'aide de scripts <strong>Terraform</strong> et de conteneurs Docker, incluant un serveur sécurisé de gestion de mots de passe. Documentation complète des procédures de déploiement (tutoriel reproductible).</p>
+      <ul class="tags proj-tags" aria-label="Technologies">
+        <li class="tag">Terraform</li><li class="tag">AWS</li><li class="tag">Docker</li>
+        <li class="tag">EC2</li><li class="tag">VPC</li>
+      </ul>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/AutomationHub" target="_blank" rel="noopener">voir le dépôt <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project">
       <div class="proj-top">
-        <div class="proj-title">TryHackMe Badge Finder — site web</div>
-        <div class="proj-meta">2026 · en ligne</div>
+        <h3 class="proj-title">TryHackMe Badge Finder — site web</h3>
+        <p class="proj-meta">2026 · en ligne</p>
       </div>
-      <p>Site statique qui associe chacun des <strong style="color:var(--ink)">138 badges</strong> de TryHackMe à la salle qui le débloque : recherche, filtres et suivi de progression stocké dans le navigateur. Données vérifiées contre l'API publique de TryHackMe, publié sur GitHub Pages.</p>
-      <div class="proj-tags">
-        <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Python</span>
-        <span class="tag">GitHub Pages</span><span class="tag">Cybersécurité</span>
-      </div>
-      <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">voir le site →</a>
+      <p>Site statique qui associe chacun des <strong>138 badges</strong> de TryHackMe à la salle qui le débloque : recherche, filtres et suivi de progression stocké dans le navigateur. Données vérifiées contre l'API publique de TryHackMe, publié sur GitHub Pages.</p>
+      <ul class="tags proj-tags" aria-label="Technologies">
+        <li class="tag">JavaScript</li><li class="tag">HTML/CSS</li><li class="tag">Python</li>
+        <li class="tag">GitHub Pages</li><li class="tag">Cybersécurité</li>
+      </ul>
+      <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">voir le site <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" aria-labelledby="experience-title">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num mono">04</span>
-      <span class="sec-title">Expérience</span>
-      <span class="sec-line"></span>
+      <span class="sec-num mono" aria-hidden="true">04</span>
+      <h2 class="sec-title" id="experience-title">Expérience</h2>
+      <span class="sec-line" aria-hidden="true"></span>
     </div>
-    <div class="exp">
-      <div class="exp-item now">
-        <div class="exp-role">Agent — Centre d'opérations (SOC), centre de données</div>
-        <div class="exp-org">Commissionnaires du Québec · centre de données, Montréal</div>
-        <div class="exp-date mono">Oct. 2023 – présent</div>
+    <ol class="exp">
+      <li class="exp-item now">
+        <h3 class="exp-role">Agent — Centre d'opérations (SOC), centre de données</h3>
+        <p class="exp-org">Centre de données · Montréal</p>
+        <p class="exp-date mono"><time datetime="2023-10">Oct. 2023</time> – présent</p>
         <p>Surveillance d'un centre de données critique 24/7 : contrôle d'accès, monitoring des systèmes et application des protocoles de sécurité de l'infrastructure. Coordination avec les équipes techniques et rapports d'incidents.</p>
-      </div>
-      <div class="exp-item">
-        <div class="exp-role">Agent de support technique bilingue</div>
-        <div class="exp-org">Altitude Sports</div>
-        <div class="exp-date mono">Sept. 2022 – Sept. 2023</div>
+      </li>
+      <li class="exp-item">
+        <h3 class="exp-role">Agent de support technique bilingue</h3>
+        <p class="exp-org">Commerce en ligne</p>
+        <p class="exp-date mono"><time datetime="2022-09">Sept. 2022</time> – <time datetime="2023-09">Sept. 2023</time></p>
         <p>Support technique niveau 1 bilingue (FR/EN) : diagnostic et résolution de problèmes de comptes, commandes et paiements. Documentation des incidents, suivi jusqu'à résolution et escalade des cas complexes.</p>
-      </div>
-      <div class="exp-item">
-        <div class="exp-role">Agent de sécurité — L'Oréal Canada</div>
-        <div class="exp-org">Securitas</div>
-        <div class="exp-date mono">Mars 2023 – Oct. 2025</div>
+      </li>
+      <li class="exp-item">
+        <h3 class="exp-role">Agent de sécurité</h3>
+        <p class="exp-org">Environnement corporatif</p>
+        <p class="exp-date mono"><time datetime="2023-03">Mars 2023</time> – <time datetime="2025-10">Oct. 2025</time></p>
         <p>Surveillance et application des protocoles en environnement corporatif. Service à la clientèle, gestion d'incidents et production de rapports.</p>
-      </div>
-      <div class="exp-item">
-        <div class="exp-role">Commis d'entrepôt · Cuisinier / Caissier</div>
-        <div class="exp-org">SSENSE · La Ronde (Six Flags)</div>
-        <div class="exp-date mono">2019 – 2023</div>
+      </li>
+      <li class="exp-item">
+        <h3 class="exp-role">Commis d'entrepôt · Cuisinier / Caissier</h3>
+        <p class="exp-org">Entrepôt de commerce en ligne · parc d'attractions</p>
+        <p class="exp-date mono"><time datetime="2019">2019</time> – <time datetime="2023">2023</time></p>
         <p>Gestion d'inventaire, traitement de commandes à haut volume et service à la clientèle en environnement sous pression.</p>
-      </div>
-    </div>
+      </li>
+    </ol>
+    <p class="exp-note mono">Noms des employeurs et références : sur demande.</p>
   </div>
 </section>
 
-<footer id="contact">
+</main>
+
+<footer id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <h2>On se connecte ?</h2>
+    <h2 id="contact-title">On se connecte ?</h2>
     <p>Ouvert aux opportunités de technicien en télécommunication dans la région de Montréal. Disponible et flexible.</p>
     <div class="foot-links">
-      <a class="btn primary" href="mailto:info@bazeeza.ca">✉ info@bazeeza.ca</a>
-      <a class="btn" href="https://github.com/Bazeeza" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn primary" href="mailto:info@bazeeza.ca"><span aria-hidden="true">✉</span> info@bazeeza.ca</a>
+      <a class="btn" href="https://github.com/Bazeeza" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </div>
-    <div class="foot-meta">exit code 0 · construit avec HTML/CSS · hébergé sur GitHub Pages</div>
+    <p class="foot-meta">exit code 0 · construit avec HTML/CSS · hébergé sur GitHub Pages</p>
   </div>
 </footer>
 

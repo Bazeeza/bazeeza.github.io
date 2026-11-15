@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" width="320" height="260">
+  <!-- Decorative: generic topology in the style of the GitHub profile banner. No real device names. -->
+  <style>
+    .lien { stroke: #2c4778; stroke-width: 2; fill: none; }
+    .flux { stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-dasharray: 3 15; animation: flux 1.6s linear infinite; }
+    .vert { stroke: #3fe0a0; }
+    .bleu { stroke: #2b9dff; animation-duration: 2.1s; }
+    .secours { stroke: #ffb454; stroke-width: 2; stroke-dasharray: 6 6; fill: none; opacity: .65; }
+    .noeud { fill: #0d1730; stroke-width: 2.5; }
+    .etiq { font: 11px Consolas, 'SFMono-Regular', Menlo, monospace; fill: #8fa3c8; letter-spacing: .5px; }
+    .onde { fill: none; stroke: #3fe0a0; stroke-width: 2; transform-origin: 160px 130px; animation: onde 2.4s ease-out infinite; }
+    @keyframes flux { to { stroke-dashoffset: -18; } }
+    @keyframes onde { from { transform: scale(1); opacity: .7; } to { transform: scale(2.2); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .flux, .onde { animation: none; } .onde { opacity: 0; } }
+  </style>
+
+  <path class="secours" d="M60 52 L260 52"/>
+  <path class="lien" d="M60 52 L160 130 M260 52 L160 130 M160 130 L70 212 M160 130 L250 212"/>
+  <path class="flux vert" d="M60 52 L160 130"/>
+  <path class="flux bleu" d="M160 130 L260 52"/>
+  <path class="flux vert" d="M160 130 L70 212"/>
+  <path class="flux bleu" d="M160 130 L250 212"/>
+
+  <circle class="onde" cx="160" cy="130" r="18"/>
+  <circle class="noeud" cx="160" cy="130" r="18" stroke="#3fe0a0"/>
+  <text class="etiq" x="160" y="168" text-anchor="middle">CORE</text>
+
+  <circle class="noeud" cx="60" cy="52" r="13" stroke="#2b9dff"/>
+  <text class="etiq" x="60" y="26" text-anchor="middle">RTR-A</text>
+  <circle class="noeud" cx="260" cy="52" r="13" stroke="#2b9dff"/>
+  <text class="etiq" x="260" y="26" text-anchor="middle">RTR-B</text>
+
+  <circle class="noeud" cx="70" cy="212" r="12" stroke="#ffb454"/>
+  <text class="etiq" x="70" y="246" text-anchor="middle">VoIP / SIP</text>
+  <circle class="noeud" cx="250" cy="212" r="12" stroke="#c792ea"/>
+  <text class="etiq" x="250" y="246" text-anchor="middle">SNMP</text>
+</svg>

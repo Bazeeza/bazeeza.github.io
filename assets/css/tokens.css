@@ -1,0 +1,58 @@
+/*
+  Design tokens for bazeeza.github.io.
+  Same palette as the GitHub profile banner (Bazeeza/Bazeeza, assets/banniere.svg),
+  so the profile and the portfolio read as one system.
+  Contrast ratios against --color-bg / --color-surface are listed in docs/design-system.md.
+  Change a value here, never a raw hex code in main.css.
+*/
+:root{
+  /* Surfaces, darkest to lightest */
+  --color-bg:#070d1c;
+  --color-surface-sunken:#0a1226;
+  --color-surface:#0d1730;
+  --color-border:#1d3157;
+  --color-border-strong:#2c4778;
+
+  /* Text */
+  --color-text:#e6edf3;        /* body text and headings */
+  --color-text-muted:#8b99a8;  /* paragraphs, secondary text */
+  --color-text-dim:#7f8ea3;    /* metadata, labels (was #5d6b7a: below 4.5:1) */
+  --color-on-accent:#04140d;   /* text placed on a green fill */
+
+  /* Signal palette: one meaning per color */
+  --color-green:#3fe0a0;       /* link up, primary action, current item */
+  --color-green-hover:#54f0b3;
+  --color-blue:#2b9dff;        /* structure: section numbers, project accent */
+  --color-amber:#ffb454;       /* attention, backup path, warnings */
+  --color-violet:#c792ea;      /* supervision, secondary highlight */
+
+  /* Typography */
+  /* System font stacks: same families as the profile banner, no web font download */
+  --font-sans:'Segoe UI',system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif;
+  --font-mono:Consolas,'Cascadia Mono','SFMono-Regular',Menlo,'Liberation Mono',monospace;
+  --text-xs:.75rem;      /* 12 px */
+  --text-sm:.875rem;     /* 14 px */
+  --text-base:1rem;      /* 16 px */
+  --text-lg:1.125rem;    /* 18 px */
+  --text-xl:1.25rem;     /* 20 px */
+  --text-2xl:1.625rem;   /* 26 px */
+  --text-display:clamp(2.125rem,6vw,3.75rem);
+  --leading-tight:1.1;
+  --leading-body:1.6;
+
+  /* Spacing: 4 px grid */
+  --space-1:.25rem;
+  --space-2:.5rem;
+  --space-3:.75rem;
+  --space-4:1rem;
+  --space-5:1.5rem;
+  --space-6:2rem;
+  --space-7:2.5rem;
+  --space-8:4.5rem;
+
+  /* Shape and motion */
+  --radius:6px;
+  --radius-sm:3px;
+  --content-width:60rem;
+  --duration:.2s;
+}
