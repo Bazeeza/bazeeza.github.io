@@ -35,8 +35,8 @@ Chaque couleur de signal a **un seul sens**, pour que la page reste lisible d'un
 | `--color-text-muted` | `#8b99a8` | Paragraphes |
 | `--color-text-dim` | `#7f8ea3` | Métadonnées (dates, libellés) |
 | `--color-on-accent` | `#04140d` | Texte posé sur un fond vert |
-| `--color-green` | `#3fe0a0` | Lien actif, action principale, élément en cours, focus |
-| `--color-blue` | `#2b9dff` | Structure : numéros de section, accent des projets |
+| `--color-green` | `#3fe0a0` | Lien actif, action principale, élément en cours, focus, projet phare |
+| `--color-blue` | `#2b9dff` | Structure : numéros de section, titres de groupe, accent des projets de cours |
 | `--color-amber` | `#ffb454` | Attention, lien de secours |
 | `--color-violet` | `#c792ea` | Supervision, mise en valeur secondaire |
 
@@ -98,12 +98,16 @@ Les tailles sont en `rem` : elles suivent la taille de texte choisie dans le nav
 | En-tête de section | `.sec-head` | Numéro et trait décoratifs (`aria-hidden`), titre `h2` |
 | Faits | `.facts` | Liste de description `dl` / `dt` / `dd` |
 | Étiquette | `.tag` | Élément de liste `li` dans `ul.tags` |
-| Carte projet | `.project` | `article` avec titre `h3` |
+| Groupe de projets | `.proj-group` | Titre `h3` en bleu (structure) ; la note `.proj-group-note` précise le groupe |
+| Carte projet | `.project` | `article` avec titre `h4` ; bord gauche bleu pour un projet de cours |
+| Carte projet phare | `.project.featured` | Dépôt public maintenu : bord gauche vert (« actif ») |
+| Code en ligne | `.project code` | Option ou commande citée dans une carte (`-WhatIf`, `127.0.0.1`) |
+| Autres réalisations | `.other-list` | Une ligne par projet secondaire, sans carte : lien puis description |
 | Chronologie | `.exp` | Liste ordonnée `ol`, dates dans `time` |
 
 ## Règles d'accessibilité
 
-1. Un seul `h1`, puis `h2` par section et `h3` dans les sections : aucun niveau sauté.
+1. Un seul `h1`, puis `h2` par section et `h3` dans les sections : aucun niveau sauté. Dans « Projets », les groupes sont des `h3` et les projets des `h4`.
 2. Repères : `header`, `nav` (avec `aria-label`), `main`, `footer`.
 3. Le focus clavier est **toujours visible** (`:focus-visible`, contour de 2 px).
 4. Les symboles décoratifs (flèches, enveloppe, puce de l'invite) sont `aria-hidden`.
