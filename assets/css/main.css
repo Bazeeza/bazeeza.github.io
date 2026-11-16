@@ -128,12 +128,23 @@ section[id],footer[id],main{scroll-margin-top:4rem}
 .tag{font-family:var(--font-mono);font-size:var(--text-xs);padding:var(--space-1) var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-sm);color:var(--color-text-muted);background:var(--color-surface-sunken)}
 
 /* ---- projects ---- */
+/* Group headings (h3) split the list: featured public repositories first, then course work */
+.proj-group{
+  font-family:var(--font-mono);font-size:var(--text-sm);font-weight:600;color:var(--color-blue);
+  letter-spacing:.06em;text-transform:uppercase;margin:var(--space-7) 0 var(--space-4);
+}
+.proj-group:first-of-type{margin-top:0}
+.proj-group-note{display:block;margin-top:var(--space-1);font-weight:400;color:var(--color-text-dim);letter-spacing:0;text-transform:none}
+.project code{font-family:var(--font-mono);font-size:.9em;color:var(--color-text);background:var(--color-surface-sunken);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:0 var(--space-1)}
 .project{
   border:1px solid var(--color-border);border-radius:var(--radius);background:var(--color-surface);
   padding:var(--space-6);margin-bottom:var(--space-5);transition:border-color var(--duration);position:relative;overflow:hidden;
 }
 .project:hover{border-color:var(--color-blue)}
 .project::after{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--color-blue);opacity:.6}
+/* Featured = maintained public repository: green edge, the "active" color of the design system */
+.project.featured::after{background:var(--color-green)}
+.project.featured:hover{border-color:var(--color-green)}
 .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-4);margin-bottom:var(--space-4)}
 .proj-title{font-size:var(--text-xl);font-weight:600}
 .project .proj-meta{margin:0;font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-dim);white-space:nowrap;padding-top:var(--space-1)}
@@ -141,6 +152,10 @@ section[id],footer[id],main{scroll-margin-top:4rem}
 .proj-tags{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4)}
 .proj-link{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-green);display:inline-flex;align-items:center;gap:var(--space-2);transition:gap var(--duration)}
 .proj-link:hover{gap:var(--space-3)}
+/* Smaller side projects: one line each, no card */
+.other-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-2) var(--space-4);padding:var(--space-3) 0;border-top:1px solid var(--color-border)}
+.other-list li:last-child{border-bottom:1px solid var(--color-border)}
+.other-desc{color:var(--color-text-muted);font-size:var(--text-sm)}
 
 /* ---- experience timeline ---- */
 .exp{position:relative;padding-left:var(--space-6)}

@@ -36,7 +36,7 @@
       <h1 id="hero-title">bazeeza
         <span class="role">Technicien en télécommunication</span>
       </h1>
-      <p class="lede">Finissant en réseautique au Collège de Rosemont, avec une expérience concrète en téléphonie IP. Je monte des serveurs téléphoniques FreePBX, je configure des réseaux Cisco, et je documente chaque procédure. Permis Classe 5, disponible et flexible.</p>
+      <p class="lede">Finissant du DEC Techniques de l'informatique (réseautique) au Collège de Rosemont, avec une expérience concrète en téléphonie IP. Je monte des serveurs téléphoniques FreePBX, je configure des réseaux Cisco, et je documente chaque procédure. Permis Classe 5, disponible et flexible.</p>
       <div class="cta-row">
         <a class="btn primary" href="#projects"><span aria-hidden="true">▸</span> Voir mes projets</a>
         <a class="btn" href="https://github.com/Bazeeza" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (nouvel onglet)</span></a>
@@ -56,12 +56,12 @@
     </div>
     <div class="about-grid">
       <div>
-        <p>Je termine ma dernière année du <strong>DEC en Techniques de l'informatique (Réseautique)</strong> au Collège de Rosemont. J'ai une expérience concrète en <strong>téléphonie IP</strong> et en environnement de <strong>centre de données</strong>.</p>
+        <p>Je suis finissant du <strong>DEC en Techniques de l'informatique (réseautique)</strong> au Collège de Rosemont. J'ai une expérience concrète en <strong>téléphonie IP</strong> et en environnement de <strong>centre de données</strong>.</p>
         <p>Ce que j'aime, c'est comprendre comment les choses sont connectées — du câblage physique d'un routeur Cisco jusqu'au montage d'un serveur téléphonique qui relie deux réseaux distants. Je documente mon travail sous forme de <strong>runbooks</strong> reproductibles, parce qu'une installation qu'on ne peut pas reproduire n'est faite qu'à moitié.</p>
         <p>Je vise le poste de <strong>technicien en télécommunication</strong> : installation et réparation des services de téléphonie, d'internet et de fibre. Disponible et flexible, permis Classe 5.</p>
       </div>
       <dl class="facts mono">
-        <div class="row"><dt class="k">Formation</dt><dd class="v">DEC Réseautique (dernière année) · Collège de Rosemont</dd></div>
+        <div class="row"><dt class="k">Formation</dt><dd class="v">DEC Techniques de l'informatique, réseautique (finissant) · Collège de Rosemont</dd></div>
         <div class="row"><dt class="k">Téléphonie IP</dt><dd class="v up">FreePBX</dd></div>
         <div class="row"><dt class="k">Langues</dt><dd class="v">FR · EN · Yoruba</dd></div>
         <div class="row"><dt class="k">Permis</dt><dd class="v up">Classe 5 + 6A</dd></div>
@@ -90,15 +90,17 @@
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Réseautique</h3>
         <ul class="tags">
-          <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT</li>
-          <li class="tag">DHCP</li><li class="tag">Interconnexion réseaux</li><li class="tag">TCP/IP</li>
+          <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT/PAT</li>
+          <li class="tag">OSPF</li><li class="tag">ACL</li><li class="tag">DHCP</li><li class="tag">TCP/IP</li>
+          <li class="tag">SNMP</li><li class="tag">Zabbix</li><li class="tag">Câblage T568A/B</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Systèmes &amp; infrastructure</h3>
         <ul class="tags">
           <li class="tag">Windows Server</li><li class="tag">Linux / Ubuntu</li><li class="tag">AWS</li>
-          <li class="tag">Docker</li><li class="tag">Terraform</li>
+          <li class="tag">Docker</li><li class="tag">Terraform</li><li class="tag">PowerShell</li>
+          <li class="tag">Pester</li><li class="tag">Bash</li><li class="tag">CIS Benchmark</li>
         </ul>
       </div>
       <div class="skill-card">
@@ -120,9 +122,52 @@
       <span class="sec-line" aria-hidden="true"></span>
     </div>
 
+    <h3 class="proj-group">Projets phares <span class="proj-group-note">dépôts publics, maintenus et vérifiés par CI</span></h3>
+
+    <article class="project featured">
+      <div class="proj-top">
+        <h4 class="proj-title">Technical Runbooks — procédures de soutien TI</h4>
+        <p class="proj-meta">public · v1.0.0 · anglais</p>
+      </div>
+      <p><strong>15 runbooks</strong> pas à pas rédigés selon un gabarit unique : objectif, prérequis, étapes avec résultat attendu, vérification, dépannage et sources officielles. Ils couvrent le poste de travail (UEFI, Windows 11, déploiement de logiciels), le réseau (dépannage couche par couche, câblage T568A/T568B, Wi-Fi, téléphones VoIP/SIP, configuration de base d'un commutateur Cisco), les serveurs Linux, la sauvegarde, Active Directory et Microsoft 365. Chaque modification est vérifiée par GitHub Actions (markdownlint, liens, PSScriptAnalyzer).</p>
+      <ul class="tags proj-tags" aria-label="Technologies">
+        <li class="tag">Câblage RJ45</li><li class="tag">VoIP / SIP</li><li class="tag">Cisco IOS</li>
+        <li class="tag">Windows 11</li><li class="tag">PowerShell</li><li class="tag">GitHub Actions</li>
+      </ul>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/Technical-Runbooks" target="_blank" rel="noopener">voir les runbooks <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+    </article>
+
+    <article class="project featured">
+      <div class="proj-top">
+        <h4 class="proj-title">Helpdesk Toolkit — module PowerShell de diagnostic</h4>
+        <p class="proj-meta">public · v1.0.0 · MIT</p>
+      </div>
+      <p>Module <strong>PowerShell</strong> compatible Windows PowerShell 5.1 qui automatise les premières minutes d'un billet de soutien. Six commandes : rapport système (version de Windows, numéro de série, mémoire, disques, temps de fonctionnement), diagnostic réseau couche par couche avec la cause probable, inventaire des logiciels lu dans le registre, santé des disques, nettoyage des fichiers temporaires avec aperçu <code>-WhatIf</code>, et rapport HTML autonome à joindre au billet. Testé avec <strong>Pester</strong> sous PowerShell 5.1 et 7, analysé par PSScriptAnalyzer.</p>
+      <ul class="tags proj-tags" aria-label="Technologies">
+        <li class="tag">PowerShell 5.1</li><li class="tag">Pester</li><li class="tag">PSScriptAnalyzer</li>
+        <li class="tag">CIM / WMI</li><li class="tag">HTML</li><li class="tag">GitHub Actions</li>
+      </ul>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/helpdesk-toolkit" target="_blank" rel="noopener">voir le module <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+    </article>
+
+    <article class="project featured">
+      <div class="proj-top">
+        <h4 class="proj-title">Homelab Infrastructure — documentation anonymisée</h4>
+        <p class="proj-meta">public · Linux · ADR</p>
+      </div>
+      <p>Documentation publique d'une petite infrastructure personnelle : deux serveurs Ubuntu et un poste d'administration reliés par un <strong>VPN maillé basé sur WireGuard</strong>, sans aucun port d'administration public. Chaque choix important est expliqué dans un <strong>ADR</strong> (contexte, décision, coût, options rejetées) : cloisonnement des rôles, ports Docker publiés sur <code>127.0.0.1</code>, surveillance d'un serveur par l'autre. Le dépôt contient aussi le plan de sauvegarde et de reprise, un plan de retour en arrière et les leçons apprises. Un contrôle automatique bloque toute vraie adresse, clé ou jeton.</p>
+      <ul class="tags proj-tags" aria-label="Technologies">
+        <li class="tag">Ubuntu Server</li><li class="tag">WireGuard</li><li class="tag">ufw</li>
+        <li class="tag">Docker</li><li class="tag">Bash</li><li class="tag">ShellCheck</li>
+      </ul>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/homelab-infrastructure" target="_blank" rel="noopener">voir la documentation <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+    </article>
+
+    <h3 class="proj-group">Projets de cours <span class="proj-group-note">DEC Techniques de l'informatique, réseautique</span></h3>
+
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</h3>
+        <h4 class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</h4>
         <p class="proj-meta">école · téléphonie</p>
       </div>
       <p>Installation et configuration d'un serveur de téléphonie IP <strong>FreePBX</strong> dans un environnement virtualisé Proxmox : mise en place d'un plan de numérotation et tentative d'interconnexion entre deux réseaux distants. Projet directement lié aux services de téléphonie installés sur le terrain.</p>
@@ -134,42 +179,51 @@
 
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">Architecture réseau &amp; supervision — Cisco</h3>
-        <p class="proj-meta">2024 · matériel physique</p>
+        <h4 class="proj-title">Réseaux Cisco &amp; supervision Zabbix</h4>
+        <p class="proj-meta">cours · 420-H63 · 420-H66</p>
       </div>
-      <p>Configuration complète d'un routeur et d'un commutateur Cisco physiques : serveur DHCP avec relais, NAT, VLAN (802.1Q) et supervision <strong>SNMP</strong> pour l'inventaire des équipements. Rédaction d'un runbook technique détaillé avec procédures reproductibles étape par étape.</p>
+      <p>Sur un routeur et un commutateur Cisco <strong>physiques</strong> : NAT/PAT, sous-interface VLAN 802.1Q et trunk, communautés <strong>SNMP</strong> pour l'inventaire, puis supervision des postes et serveurs avec <strong>Zabbix 7.0 LTS</strong> (AlmaLinux 9, agents Linux et Windows). En projet de réseautique : réseau redondant entre deux bâtiments avec <strong>routes statiques flottantes</strong> et tests de bascule, plus des exercices OSPF, NAT et ACL. Chaque manipulation est rédigée en runbook reproductible.</p>
       <ul class="tags proj-tags" aria-label="Technologies">
-        <li class="tag">Cisco IOS</li><li class="tag">DHCP</li><li class="tag">NAT</li>
-        <li class="tag">VLAN</li><li class="tag">SNMP</li><li class="tag">Runbook</li>
+        <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT/PAT</li>
+        <li class="tag">OSPF</li><li class="tag">ACL</li><li class="tag">SNMP</li><li class="tag">Zabbix</li>
       </ul>
       <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks" target="_blank" rel="noopener">voir le runbook <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">Infrastructure automatisée sur AWS — Terraform</h3>
-        <p class="proj-meta">équipe · AutomationHub</p>
+        <h4 class="proj-title">Durcissement CIS Benchmark — Ubuntu et Windows 11</h4>
+        <p class="proj-meta">cours · 420-H34 · scripts</p>
       </div>
-      <p>Déploiement automatisé d'infrastructure sur AWS à l'aide de scripts <strong>Terraform</strong> et de conteneurs Docker, incluant un serveur sécurisé de gestion de mots de passe. Documentation complète des procédures de déploiement (tutoriel reproductible).</p>
+      <p>Deux scripts, en <strong>Bash</strong> pour Ubuntu 24.04 et en <strong>PowerShell</strong> pour Windows 11, qui appliquent des règles du <strong>CIS Benchmark</strong> décrites dans un fichier XML. Le mode validation (<code>-v</code>) vérifie la conformité sans rien modifier ; le mode correction (<code>-c</code>) corrige les écarts avec les droits d'administrateur. Les scripts sont vérifiés automatiquement par ShellCheck et PSScriptAnalyzer, et chacun a son guide d'utilisation.</p>
       <ul class="tags proj-tags" aria-label="Technologies">
-        <li class="tag">Terraform</li><li class="tag">AWS</li><li class="tag">Docker</li>
-        <li class="tag">EC2</li><li class="tag">VPC</li>
+        <li class="tag">CIS Benchmark</li><li class="tag">Bash</li><li class="tag">PowerShell</li>
+        <li class="tag">XML</li><li class="tag">ShellCheck</li><li class="tag">PSScriptAnalyzer</li>
       </ul>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/AutomationHub" target="_blank" rel="noopener">voir le dépôt <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks/tree/main/420-H34-RO%20UTILITAIRES-R%C3%89SEAUX-AVANC%C3%89S" target="_blank" rel="noopener">voir les scripts <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">TryHackMe Badge Finder — site web</h3>
-        <p class="proj-meta">2026 · en ligne</p>
+        <h4 class="proj-title">Services Internet sur AWS &amp; Terraform</h4>
+        <p class="proj-meta">cours · équipe · 420-H66</p>
       </div>
-      <p>Site statique qui associe chacun des <strong>138 badges</strong> de TryHackMe à la salle qui le débloque : recherche, filtres et suivi de progression stocké dans le navigateur. Données vérifiées contre l'API publique de TryHackMe, publié sur GitHub Pages.</p>
+      <p>En équipe, déploiement et supervision de services sur <strong>EC2</strong> : GLPI, Nextcloud avec stockage S3, Mattermost avec base <strong>RDS</strong> PostgreSQL, Jellyfin suivi par des tableaux de bord et alarmes <strong>CloudWatch</strong>. Travail final : l'infrastructure d'une entreprise fictive répartie sur deux comptes AWS reliés par <strong>VPC Peering</strong>. Le serveur Vaultwarden déployé avec <strong>Terraform</strong> a ensuite été repris et durci dans AutomationHub : SSH limité à une plage d'adresses, IMDSv2 obligatoire, disque chiffré et validation Terraform automatique.</p>
       <ul class="tags proj-tags" aria-label="Technologies">
-        <li class="tag">JavaScript</li><li class="tag">HTML/CSS</li><li class="tag">Python</li>
-        <li class="tag">GitHub Pages</li><li class="tag">Cybersécurité</li>
+        <li class="tag">AWS EC2 / VPC</li><li class="tag">RDS</li><li class="tag">S3</li>
+        <li class="tag">CloudWatch</li><li class="tag">Terraform</li><li class="tag">Docker</li>
       </ul>
-      <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">voir le site <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/AutomationHub" target="_blank" rel="noopener">voir le dépôt <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
+
+    <h3 class="proj-group">Autres réalisations</h3>
+
+    <ul class="other-list">
+      <li>
+        <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">TryHackMe Badge Finder <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+        <span class="other-desc">site statique qui associe chaque badge TryHackMe à la salle qui le débloque, avec recherche et suivi de progression · JavaScript, GitHub Pages</span>
+      </li>
+    </ul>
   </div>
 </section>
 
