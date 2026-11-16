@@ -7,7 +7,7 @@
 
 > **English summary.** Source of the personal portfolio of `bazeeza`, a network and telecommunications technician in training. One static HTML page, two stylesheets, no JavaScript, no web fonts, no build step. Colors come from design tokens shared with the GitHub profile banner, and the markup follows WCAG 2.2 AA practices (landmarks, heading order, visible focus, contrast-checked colors). The site is currently offline.
 
-Portfolio d'une page : présentation, compétences, projets, expérience et contact.
+Portfolio d'une page : présentation, compétences, projets (dépôts phares, projets de cours, autres réalisations), expérience et contact.
 
 > [!NOTE]
 > Le dépôt est **privé** et le site est **hors ligne** pour le moment. Sa remise en ligne est une décision du propriétaire.
@@ -39,6 +39,24 @@ bazeeza.github.io/
 | Animations coupées avec `prefers-reduced-motion` | Respecte le réglage « réduire les animations » du système |
 
 Le détail des couleurs, des contrastes et des composants est dans [docs/design-system.md](docs/design-system.md).
+
+## Sources des projets
+
+Chaque carte de la section « Projets » résume un dépôt. Le texte reprend ce que dit le README de ce dépôt : aucun chiffre ni résultat qui n'y figure pas. Quand un dépôt change (nouvelle version, nouveau runbook), sa carte doit être relue.
+
+| Groupe | Carte | Source | Visibilité de la source |
+|---|---|---|---|
+| Projets phares | Technical Runbooks | [Bazeeza/Technical-Runbooks](https://github.com/Bazeeza/Technical-Runbooks) | Public |
+| Projets phares | Helpdesk Toolkit | [Bazeeza/helpdesk-toolkit](https://github.com/Bazeeza/helpdesk-toolkit) | Public |
+| Projets phares | Homelab Infrastructure | [Bazeeza/homelab-infrastructure](https://github.com/Bazeeza/homelab-infrastructure) | Public |
+| Projets de cours | Téléphonie IP FreePBX | Aucun dépôt (description fournie par le propriétaire) | — |
+| Projets de cours | Réseaux Cisco et Zabbix | Bazeeza/Projets-Runbooks, cours 420-H63 et 420-H66 | **Privé** |
+| Projets de cours | Durcissement CIS Benchmark | Bazeeza/Projets-Runbooks, cours 420-H34 | **Privé** |
+| Projets de cours | Services Internet sur AWS | Bazeeza/Projets-Runbooks (420-H66) et [Bazeeza/AutomationHub](https://github.com/Bazeeza/AutomationHub) | Privé / public |
+| Autres réalisations | TryHackMe Badge Finder | [Bazeeza/thm-badge-finder](https://github.com/Bazeeza/thm-badge-finder) | Public |
+
+> [!NOTE]
+> Les liens des cartes Cisco et CIS mènent à `Projets-Runbooks`, qui est **privé** : un visiteur verrait une erreur 404. Avant de remettre le site en ligne, il faut soit rendre ce dépôt public (après avoir vérifié tout son historique), soit retirer ces deux liens.
 
 ## Aperçu en local
 
