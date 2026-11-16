@@ -120,9 +120,11 @@
       <span class="sec-line" aria-hidden="true"></span>
     </div>
 
-    <article class="project">
+    <h3 class="proj-group">Projets phares <span class="proj-group-note">dépôts publics, maintenus et vérifiés par CI</span></h3>
+
+    <article class="project featured">
       <div class="proj-top">
-        <h3 class="proj-title">Technical Runbooks — procédures de soutien TI</h3>
+        <h4 class="proj-title">Technical Runbooks — procédures de soutien TI</h4>
         <p class="proj-meta">public · v1.0.0 · anglais</p>
       </div>
       <p><strong>15 runbooks</strong> pas à pas rédigés selon un gabarit unique : objectif, prérequis, étapes avec résultat attendu, vérification, dépannage et sources officielles. Ils couvrent le poste de travail (UEFI, Windows 11, déploiement de logiciels), le réseau (dépannage couche par couche, câblage T568A/T568B, Wi-Fi, téléphones VoIP/SIP, configuration de base d'un commutateur Cisco), les serveurs Linux, la sauvegarde, Active Directory et Microsoft 365. Chaque modification est vérifiée par GitHub Actions (markdownlint, liens, PSScriptAnalyzer).</p>
@@ -133,9 +135,9 @@
       <a class="proj-link mono" href="https://github.com/Bazeeza/Technical-Runbooks" target="_blank" rel="noopener">voir les runbooks <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
-    <article class="project">
+    <article class="project featured">
       <div class="proj-top">
-        <h3 class="proj-title">Helpdesk Toolkit — module PowerShell de diagnostic</h3>
+        <h4 class="proj-title">Helpdesk Toolkit — module PowerShell de diagnostic</h4>
         <p class="proj-meta">public · v1.0.0 · MIT</p>
       </div>
       <p>Module <strong>PowerShell</strong> compatible Windows PowerShell 5.1 qui automatise les premières minutes d'un billet de soutien. Six commandes : rapport système (version de Windows, numéro de série, mémoire, disques, temps de fonctionnement), diagnostic réseau couche par couche avec la cause probable, inventaire des logiciels lu dans le registre, santé des disques, nettoyage des fichiers temporaires avec aperçu <code>-WhatIf</code>, et rapport HTML autonome à joindre au billet. Testé avec <strong>Pester</strong> sous PowerShell 5.1 et 7, analysé par PSScriptAnalyzer.</p>
@@ -146,9 +148,9 @@
       <a class="proj-link mono" href="https://github.com/Bazeeza/helpdesk-toolkit" target="_blank" rel="noopener">voir le module <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
-    <article class="project">
+    <article class="project featured">
       <div class="proj-top">
-        <h3 class="proj-title">Homelab Infrastructure — documentation anonymisée</h3>
+        <h4 class="proj-title">Homelab Infrastructure — documentation anonymisée</h4>
         <p class="proj-meta">public · Linux · ADR</p>
       </div>
       <p>Documentation publique d'une petite infrastructure personnelle : deux serveurs Ubuntu et un poste d'administration reliés par un <strong>VPN maillé basé sur WireGuard</strong>, sans aucun port d'administration public. Chaque choix important est expliqué dans un <strong>ADR</strong> (contexte, décision, coût, options rejetées) : cloisonnement des rôles, ports Docker publiés sur <code>127.0.0.1</code>, surveillance d'un serveur par l'autre. Le dépôt contient aussi le plan de sauvegarde et de reprise, un plan de retour en arrière et les leçons apprises. Un contrôle automatique bloque toute vraie adresse, clé ou jeton.</p>
@@ -159,9 +161,11 @@
       <a class="proj-link mono" href="https://github.com/Bazeeza/homelab-infrastructure" target="_blank" rel="noopener">voir la documentation <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
+    <h3 class="proj-group">Projets de cours <span class="proj-group-note">DEC Techniques de l'informatique, réseautique</span></h3>
+
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</h3>
+        <h4 class="proj-title">Serveur de téléphonie IP FreePBX sur Proxmox</h4>
         <p class="proj-meta">école · téléphonie</p>
       </div>
       <p>Installation et configuration d'un serveur de téléphonie IP <strong>FreePBX</strong> dans un environnement virtualisé Proxmox : mise en place d'un plan de numérotation et tentative d'interconnexion entre deux réseaux distants. Projet directement lié aux services de téléphonie installés sur le terrain.</p>
@@ -173,7 +177,7 @@
 
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">Réseaux Cisco &amp; supervision Zabbix</h3>
+        <h4 class="proj-title">Réseaux Cisco &amp; supervision Zabbix</h4>
         <p class="proj-meta">cours · 420-H63 · 420-H66</p>
       </div>
       <p>Sur un routeur et un commutateur Cisco <strong>physiques</strong> : NAT/PAT, sous-interface VLAN 802.1Q et trunk, communautés <strong>SNMP</strong> pour l'inventaire, puis supervision des postes et serveurs avec <strong>Zabbix 7.0 LTS</strong> (AlmaLinux 9, agents Linux et Windows). En projet de réseautique : réseau redondant entre deux bâtiments avec <strong>routes statiques flottantes</strong> et tests de bascule, plus des exercices OSPF, NAT et ACL. Chaque manipulation est rédigée en runbook reproductible.</p>
@@ -186,7 +190,7 @@
 
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">Durcissement CIS Benchmark — Ubuntu et Windows 11</h3>
+        <h4 class="proj-title">Durcissement CIS Benchmark — Ubuntu et Windows 11</h4>
         <p class="proj-meta">cours · 420-H34 · scripts</p>
       </div>
       <p>Deux scripts, en <strong>Bash</strong> pour Ubuntu 24.04 et en <strong>PowerShell</strong> pour Windows 11, qui appliquent des règles du <strong>CIS Benchmark</strong> décrites dans un fichier XML. Le mode validation (<code>-v</code>) vérifie la conformité sans rien modifier ; le mode correction (<code>-c</code>) corrige les écarts avec les droits d'administrateur. Les scripts sont vérifiés automatiquement par ShellCheck et PSScriptAnalyzer, et chacun a son guide d'utilisation.</p>
@@ -199,7 +203,7 @@
 
     <article class="project">
       <div class="proj-top">
-        <h3 class="proj-title">Services Internet sur AWS &amp; Terraform</h3>
+        <h4 class="proj-title">Services Internet sur AWS &amp; Terraform</h4>
         <p class="proj-meta">cours · équipe · 420-H66</p>
       </div>
       <p>En équipe, déploiement et supervision de services sur <strong>EC2</strong> : GLPI, Nextcloud avec stockage S3, Mattermost avec base <strong>RDS</strong> PostgreSQL, Jellyfin suivi par des tableaux de bord et alarmes <strong>CloudWatch</strong>. Travail final : l'infrastructure d'une entreprise fictive répartie sur deux comptes AWS reliés par <strong>VPC Peering</strong>. Le serveur Vaultwarden déployé avec <strong>Terraform</strong> a ensuite été repris et durci dans AutomationHub : SSH limité à une plage d'adresses, IMDSv2 obligatoire, disque chiffré et validation Terraform automatique.</p>
@@ -210,18 +214,14 @@
       <a class="proj-link mono" href="https://github.com/Bazeeza/AutomationHub" target="_blank" rel="noopener">voir le dépôt <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
-    <article class="project">
-      <div class="proj-top">
-        <h3 class="proj-title">TryHackMe Badge Finder — site web</h3>
-        <p class="proj-meta">2026 · en ligne</p>
-      </div>
-      <p>Site statique qui associe chacun des <strong>138 badges</strong> de TryHackMe à la salle qui le débloque : recherche, filtres et suivi de progression stocké dans le navigateur. Données vérifiées contre l'API publique de TryHackMe, publié sur GitHub Pages.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
-        <li class="tag">JavaScript</li><li class="tag">HTML/CSS</li><li class="tag">Python</li>
-        <li class="tag">GitHub Pages</li><li class="tag">Cybersécurité</li>
-      </ul>
-      <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">voir le site <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
-    </article>
+    <h3 class="proj-group">Autres réalisations</h3>
+
+    <ul class="other-list">
+      <li>
+        <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">TryHackMe Badge Finder <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+        <span class="other-desc">site statique qui associe chaque badge TryHackMe à la salle qui le débloque, avec recherche et suivi de progression · JavaScript, GitHub Pages</span>
+      </li>
+    </ul>
   </div>
 </section>
 
