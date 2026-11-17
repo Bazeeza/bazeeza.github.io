@@ -52,11 +52,11 @@ Mesuré avec `wc -c` le 2026-11-17, fichiers non compressés :
 | Fichier | Octets |
 |---|---|
 | `index.html` | 21 562 |
-| `assets/css/main.css` | 13 264 |
+| `assets/css/main.css` | 13 392 |
 | `assets/css/tokens.css` | 2 154 |
 | `assets/img/topologie.svg` | 2 235 |
 | `assets/img/favicon.svg` | 440 |
-| **Total de la page d'accueil** | **39 655 (5 requêtes)** |
+| **Total de la page d'accueil** | **39 783 (5 requêtes)** |
 
 Aucune police, aucun script exécutable, aucune ressource d'un tiers. Le bloc `application/ld+json` de `index.html` est une donnée lue par les moteurs de recherche, pas du JavaScript.
 
@@ -106,6 +106,8 @@ python -m http.server 8000
 ```
 
 puis ouvrir `http://localhost:8000`.
+
+La page `404.html` utilise des chemins absolus (`/assets/...`) : ouverte directement depuis le disque, elle s'affiche sans style. Avec le serveur local, ouvrir `http://localhost:8000/404.html` pour la voir comme en ligne.
 
 ## Vérifier l'accessibilité
 
