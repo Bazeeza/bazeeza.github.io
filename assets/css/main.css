@@ -216,4 +216,5 @@ footer p{color:var(--color-text-muted);margin-bottom:var(--space-5)}
 .notfound .eyebrow,.notfound h1 .role{color:var(--color-amber)}
 
 ::selection{background:var(--color-green);color:var(--color-on-accent)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* "*" does not match pseudo-elements: ::before and ::after are listed so the status pulse ring stops too */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
