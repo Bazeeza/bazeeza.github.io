@@ -6,6 +6,8 @@
   Change a value here, never a raw hex code in main.css.
 */
 :root{
+  color-scheme:dark;  /* native scrollbars and form controls follow the dark theme */
+
   /* Surfaces, darkest to lightest */
   --color-bg:#070d1c;
   --color-surface-sunken:#0a1226;

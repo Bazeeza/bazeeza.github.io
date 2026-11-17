@@ -4,8 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>bazeeza — Technicien en télécommunication</title>
-<meta name="description" content="Portfolio de bazeeza — technicien en télécommunication. Téléphonie IP (FreePBX), réseaux Cisco, infrastructure et supervision.">
+<meta name="description" content="Portfolio de bazeeza, finissant du DEC en réseautique à Montréal : runbooks de soutien TI, module PowerShell testé, réseaux Cisco, téléphonie IP et AWS.">
+<link rel="canonical" href="https://bazeeza.github.io/">
+<!-- Tells the browser the page is dark before the CSS arrives: no white flash, dark scrollbars -->
+<meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#070d1c">
+<!-- Link previews (LinkedIn, Teams, Slack). No og:image yet: most preview crawlers ignore SVG, a 1200x630 PNG is still to be made. -->
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:site_name" content="bazeeza">
+<meta property="og:title" content="bazeeza — Technicien en télécommunication">
+<meta property="og:description" content="Finissant du DEC en réseautique à Montréal : runbooks de soutien TI, module PowerShell testé, réseaux Cisco, téléphonie IP et AWS.">
+<meta property="og:url" content="https://bazeeza.github.io/">
+<meta property="profile:username" content="Bazeeza">
+<meta name="twitter:card" content="summary">
+<!-- Structured data for search engines: only facts already shown on the page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "bazeeza",
+  "url": "https://bazeeza.github.io/",
+  "jobTitle": "Technicien en télécommunication",
+  "email": "mailto:info@bazeeza.ca",
+  "address": { "@type": "PostalAddress", "addressLocality": "Montréal", "addressRegion": "QC", "addressCountry": "CA" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Collège de Rosemont" },
+  "knowsAbout": ["Cisco IOS", "VLAN", "VoIP", "SIP", "FreePBX", "PowerShell", "Linux", "AWS", "Terraform"],
+  "knowsLanguage": ["fr", "en"],
+  "sameAs": ["https://github.com/Bazeeza"]
+}
+</script>
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/main.css">
@@ -16,13 +44,14 @@
 
 <header class="statusbar">
   <div class="wrap">
-    <span class="mono"><span class="dot" aria-hidden="true">●</span> bazeeza@montreal:~$ <span class="cmd">whoami</span></span>
+    <span class="mono" lang="en"><span class="dot" aria-hidden="true">●</span> bazeeza@montreal:~$ <span class="cmd">whoami</span></span>
+    <!-- The French label stays French; only the English link texts carry lang="en" -->
     <nav class="nav-links mono" aria-label="Sections de la page">
-      <a href="#about">./about</a>
-      <a href="#skills">./skills</a>
-      <a href="#projects">./projects</a>
-      <a href="#experience">./experience</a>
-      <a href="#contact">./contact</a>
+      <a href="#about" lang="en">./about</a>
+      <a href="#skills" lang="en">./skills</a>
+      <a href="#projects" lang="en">./projects</a>
+      <a href="#experience" lang="en">./experience</a>
+      <a href="#contact" lang="en">./contact</a>
     </nav>
   </div>
 </header>
@@ -32,7 +61,7 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow mono"><span class="pulse" aria-hidden="true"></span> LINK STATUS: UP · MONTRÉAL, QC</p>
+      <p class="eyebrow mono"><span class="pulse" aria-hidden="true"></span> <span lang="en">LINK STATUS: UP</span> · MONTRÉAL, QC</p>
       <h1 id="hero-title">bazeeza
         <span class="role">Technicien en télécommunication</span>
       </h1>
@@ -82,14 +111,14 @@
     <div class="skills-grid">
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Téléphonie IP</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">FreePBX</li><li class="tag">VoIP</li><li class="tag">SIP</li>
           <li class="tag">Plan de numérotation</li><li class="tag">Proxmox</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Réseautique</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT/PAT</li>
           <li class="tag">OSPF</li><li class="tag">ACL</li><li class="tag">DHCP</li><li class="tag">TCP/IP</li>
           <li class="tag">SNMP</li><li class="tag">Zabbix</li><li class="tag">Câblage T568A/B</li>
@@ -97,7 +126,7 @@
       </div>
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Systèmes &amp; infrastructure</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">Windows Server</li><li class="tag">Linux / Ubuntu</li><li class="tag">AWS</li>
           <li class="tag">Docker</li><li class="tag">Terraform</li><li class="tag">PowerShell</li>
           <li class="tag">Pester</li><li class="tag">Bash</li><li class="tag">CIS Benchmark</li>
@@ -105,7 +134,7 @@
       </div>
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Terrain &amp; service</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">Installation d'équipements</li><li class="tag">Service client</li>
           <li class="tag">Travail en hauteur</li><li class="tag">Santé-sécurité</li><li class="tag">Git</li>
         </ul>
@@ -130,11 +159,11 @@
         <p class="proj-meta">public · v1.0.0 · anglais</p>
       </div>
       <p><strong>15 runbooks</strong> pas à pas rédigés selon un gabarit unique : objectif, prérequis, étapes avec résultat attendu, vérification, dépannage et sources officielles. Ils couvrent le poste de travail (UEFI, Windows 11, déploiement de logiciels), le réseau (dépannage couche par couche, câblage T568A/T568B, Wi-Fi, téléphones VoIP/SIP, configuration de base d'un commutateur Cisco), les serveurs Linux, la sauvegarde, Active Directory et Microsoft 365. Chaque modification est vérifiée par GitHub Actions (markdownlint, liens, PSScriptAnalyzer).</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">Câblage RJ45</li><li class="tag">VoIP / SIP</li><li class="tag">Cisco IOS</li>
         <li class="tag">Windows 11</li><li class="tag">PowerShell</li><li class="tag">GitHub Actions</li>
       </ul>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/Technical-Runbooks" target="_blank" rel="noopener">voir les runbooks <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/Technical-Runbooks" target="_blank" rel="noopener">voir les runbooks<span class="visually-hidden"> Technical Runbooks</span> <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project featured">
@@ -143,11 +172,11 @@
         <p class="proj-meta">public · v1.0.0 · MIT</p>
       </div>
       <p>Module <strong>PowerShell</strong> compatible Windows PowerShell 5.1 qui automatise les premières minutes d'un billet de soutien. Six commandes : rapport système (version de Windows, numéro de série, mémoire, disques, temps de fonctionnement), diagnostic réseau couche par couche avec la cause probable, inventaire des logiciels lu dans le registre, santé des disques, nettoyage des fichiers temporaires avec aperçu <code>-WhatIf</code>, et rapport HTML autonome à joindre au billet. Testé avec <strong>Pester</strong> sous PowerShell 5.1 et 7, analysé par PSScriptAnalyzer.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">PowerShell 5.1</li><li class="tag">Pester</li><li class="tag">PSScriptAnalyzer</li>
         <li class="tag">CIM / WMI</li><li class="tag">HTML</li><li class="tag">GitHub Actions</li>
       </ul>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/helpdesk-toolkit" target="_blank" rel="noopener">voir le module <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/helpdesk-toolkit" target="_blank" rel="noopener">voir le module<span class="visually-hidden"> Helpdesk Toolkit</span> <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project featured">
@@ -156,11 +185,11 @@
         <p class="proj-meta">public · Linux · ADR</p>
       </div>
       <p>Documentation publique d'une petite infrastructure personnelle : deux serveurs Ubuntu et un poste d'administration reliés par un <strong>VPN maillé basé sur WireGuard</strong>, sans aucun port d'administration public. Chaque choix important est expliqué dans un <strong>ADR</strong> (contexte, décision, coût, options rejetées) : cloisonnement des rôles, ports Docker publiés sur <code>127.0.0.1</code>, surveillance d'un serveur par l'autre. Le dépôt contient aussi le plan de sauvegarde et de reprise, un plan de retour en arrière et les leçons apprises. Un contrôle automatique bloque toute vraie adresse, clé ou jeton.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">Ubuntu Server</li><li class="tag">WireGuard</li><li class="tag">ufw</li>
         <li class="tag">Docker</li><li class="tag">Bash</li><li class="tag">ShellCheck</li>
       </ul>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/homelab-infrastructure" target="_blank" rel="noopener">voir la documentation <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/homelab-infrastructure" target="_blank" rel="noopener">voir la documentation<span class="visually-hidden"> Homelab Infrastructure</span> <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <h3 class="proj-group">Projets de cours <span class="proj-group-note">DEC Techniques de l'informatique, réseautique</span></h3>
@@ -171,7 +200,7 @@
         <p class="proj-meta">école · téléphonie</p>
       </div>
       <p>Installation et configuration d'un serveur de téléphonie IP <strong>FreePBX</strong> dans un environnement virtualisé Proxmox : mise en place d'un plan de numérotation et tentative d'interconnexion entre deux réseaux distants. Projet directement lié aux services de téléphonie installés sur le terrain.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">FreePBX</li><li class="tag">Proxmox</li><li class="tag">VoIP</li>
         <li class="tag">SIP</li><li class="tag">Interconnexion réseaux</li>
       </ul>
@@ -183,11 +212,11 @@
         <p class="proj-meta">cours · 420-H63 · 420-H66</p>
       </div>
       <p>Sur un routeur et un commutateur Cisco <strong>physiques</strong> : NAT/PAT, sous-interface VLAN 802.1Q et trunk, communautés <strong>SNMP</strong> pour l'inventaire, puis supervision des postes et serveurs avec <strong>Zabbix 7.0 LTS</strong> (AlmaLinux 9, agents Linux et Windows). En projet de réseautique : réseau redondant entre deux bâtiments avec <strong>routes statiques flottantes</strong> et tests de bascule, plus des exercices OSPF, NAT et ACL. Chaque manipulation est rédigée en runbook reproductible.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT/PAT</li>
         <li class="tag">OSPF</li><li class="tag">ACL</li><li class="tag">SNMP</li><li class="tag">Zabbix</li>
       </ul>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks" target="_blank" rel="noopener">voir le runbook <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks" target="_blank" rel="noopener">voir le runbook<span class="visually-hidden"> Réseaux Cisco et Zabbix</span> <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project">
@@ -196,11 +225,11 @@
         <p class="proj-meta">cours · 420-H34 · scripts</p>
       </div>
       <p>Deux scripts, en <strong>Bash</strong> pour Ubuntu 24.04 et en <strong>PowerShell</strong> pour Windows 11, qui appliquent des règles du <strong>CIS Benchmark</strong> décrites dans un fichier XML. Le mode validation (<code>-v</code>) vérifie la conformité sans rien modifier ; le mode correction (<code>-c</code>) corrige les écarts avec les droits d'administrateur. Les scripts sont vérifiés automatiquement par ShellCheck et PSScriptAnalyzer, et chacun a son guide d'utilisation.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">CIS Benchmark</li><li class="tag">Bash</li><li class="tag">PowerShell</li>
         <li class="tag">XML</li><li class="tag">ShellCheck</li><li class="tag">PSScriptAnalyzer</li>
       </ul>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks/tree/main/420-H34-RO%20UTILITAIRES-R%C3%89SEAUX-AVANC%C3%89S" target="_blank" rel="noopener">voir les scripts <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/Projets-Runbooks/tree/main/420-H34-RO%20UTILITAIRES-R%C3%89SEAUX-AVANC%C3%89S" target="_blank" rel="noopener">voir les scripts<span class="visually-hidden"> de durcissement CIS</span> <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <article class="project">
@@ -209,16 +238,16 @@
         <p class="proj-meta">cours · équipe · 420-H66</p>
       </div>
       <p>En équipe, déploiement et supervision de services sur <strong>EC2</strong> : GLPI, Nextcloud avec stockage S3, Mattermost avec base <strong>RDS</strong> PostgreSQL, Jellyfin suivi par des tableaux de bord et alarmes <strong>CloudWatch</strong>. Travail final : l'infrastructure d'une entreprise fictive répartie sur deux comptes AWS reliés par <strong>VPC Peering</strong>. Le serveur Vaultwarden déployé avec <strong>Terraform</strong> a ensuite été repris et durci dans AutomationHub : SSH limité à une plage d'adresses, IMDSv2 obligatoire, disque chiffré et validation Terraform automatique.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">AWS EC2 / VPC</li><li class="tag">RDS</li><li class="tag">S3</li>
         <li class="tag">CloudWatch</li><li class="tag">Terraform</li><li class="tag">Docker</li>
       </ul>
-      <a class="proj-link mono" href="https://github.com/Bazeeza/AutomationHub" target="_blank" rel="noopener">voir le dépôt <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
+      <a class="proj-link mono" href="https://github.com/Bazeeza/AutomationHub" target="_blank" rel="noopener">voir le dépôt<span class="visually-hidden"> AutomationHub</span> <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
 
     <h3 class="proj-group">Autres réalisations</h3>
 
-    <ul class="other-list">
+    <ul class="other-list" role="list">
       <li>
         <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">TryHackMe Badge Finder <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
         <span class="other-desc">site statique qui associe chaque badge TryHackMe à la salle qui le débloque, avec recherche et suivi de progression · JavaScript, GitHub Pages</span>
@@ -234,7 +263,7 @@
       <h2 class="sec-title" id="experience-title">Expérience</h2>
       <span class="sec-line" aria-hidden="true"></span>
     </div>
-    <ol class="exp">
+    <ol class="exp" role="list">
       <li class="exp-item now">
         <h3 class="exp-role">Agent — Centre d'opérations (SOC), centre de données</h3>
         <p class="exp-org">Centre de données · Montréal</p>
@@ -274,7 +303,7 @@
       <a class="btn primary" href="mailto:info@bazeeza.ca"><span aria-hidden="true">✉</span> info@bazeeza.ca</a>
       <a class="btn" href="https://github.com/Bazeeza" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </div>
-    <p class="foot-meta">exit code 0 · construit avec HTML/CSS · hébergé sur GitHub Pages</p>
+    <p class="foot-meta"><span lang="en">exit code 0</span> · construit avec HTML/CSS · hébergé sur GitHub Pages</p>
   </div>
 </footer>
 

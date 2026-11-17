@@ -1,0 +1,8 @@
+# Crawlers only read robots.txt at the root of the domain.
+# Project sites served under bazeeza.github.io/<repo>/ are covered by this file,
+# so their sitemaps are listed here too.
+User-agent: *
+Allow: /
+
+Sitemap: https://bazeeza.github.io/sitemap.xml
+Sitemap: https://bazeeza.github.io/thm-badge-finder/sitemap.xml

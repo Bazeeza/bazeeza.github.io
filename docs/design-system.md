@@ -87,6 +87,19 @@ Les tailles sont en `rem` : elles suivent la taille de texte choisie dans le nav
 - Rayons : `--radius` 6 px (cartes, boutons), `--radius-sm` 3 px (étiquettes).
 - Largeur du contenu : `--content-width` 60 rem.
 - Durée des transitions : `--duration` 0,2 s. Avec `prefers-reduced-motion: reduce`, toutes les animations s'arrêtent, y compris celle de `topologie.svg`.
+- Une animation ne touche que `transform` et `opacity` (la pastille d'état est un pseudo-élément qui grandit et s'efface), jamais `box-shadow`, `width` ou `top`, qui obligent à repeindre la page à chaque image.
+
+## Points de rupture
+
+| Largeur | Changement |
+|---|---|
+| ≤ 860 px | Héros sur une colonne, illustration décorative masquée |
+| ≤ 720 px | « À propos » et compétences sur une colonne |
+| ≤ 620 px | Menu sous l'invite, sur plusieurs lignes au besoin ; barre d'état non collante |
+| ≤ 520 px | Marges de section et de carte réduites, titre et métadonnées des cartes empilés, faits « libellé puis valeur » |
+| `pointer: coarse` | Écran tactile : liens du menu, boutons et liens des cartes d'au moins 44 px de haut |
+
+Objectif : lisible dès **320 px** de large sans défilement horizontal (critère WCAG 1.4.10, *Reflow*). À vérifier dans un navigateur à chaque changement de mise en page.
 
 ## Composants
 
@@ -113,5 +126,9 @@ Les tailles sont en `rem` : elles suivent la taille de texte choisie dans le nav
 4. Les symboles décoratifs (flèches, enveloppe, puce de l'invite) sont `aria-hidden`.
 5. Un lien qui ouvre un nouvel onglet l'annonce avec un texte masqué visuellement.
 6. Une image décorative a `alt=""` ; une image qui informe a un `alt` qui dit ce qu'elle montre.
+7. Un fragment en anglais dans la page française (menu `./about`, `LINK STATUS: UP`, `exit code 0`) porte `lang="en"` : le lecteur d'écran change de voix au lieu de le prononcer « à la française » (critère 3.1.2).
+8. Toute liste `ul` / `ol` dont les puces sont retirées en CSS porte `role="list"` : sinon Safari et VoiceOver ne l'annoncent plus comme une liste.
+9. Un lien générique (« voir le dépôt ») reçoit le nom du projet en texte masqué visuellement. Le texte visible reste au début du nom accessible, pour la commande vocale (critère 2.5.3).
+10. Cible tactile : au moins 24 × 24 px, ou assez d'espace autour du lien (critère 2.5.8) ; 44 px de haut sur écran tactile pour le menu, les boutons et les liens des cartes.
 
-**Reference :** [WCAG 2.2](https://www.w3.org/TR/WCAG22/) · [Understanding SC 1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) · [MDN, prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+**Reference :** [WCAG 2.2](https://www.w3.org/TR/WCAG22/) · [Understanding SC 1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) · [Understanding SC 2.5.8 Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) · [Understanding SC 3.1.2 Language of Parts](https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html) · [MDN, prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) · [MDN, ARIA list role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)

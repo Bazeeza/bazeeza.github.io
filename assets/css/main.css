@@ -12,6 +12,7 @@ body{
   font-family:var(--font-sans);
   line-height:var(--leading-body);
   -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%; /* no automatic text inflation when a phone turns to landscape */
   overflow-x:hidden;
 }
 .mono{font-family:var(--font-mono)}
@@ -22,6 +23,8 @@ strong{color:var(--color-text);font-weight:600}
 :focus-visible{outline:2px solid var(--color-green);outline-offset:3px;border-radius:var(--radius-sm)}
 .btn.primary:focus-visible,.skip-link:focus-visible{outline-color:var(--color-text)}
 main:focus{outline:none}
+/* Safari/VoiceOver stops announcing a list once its bullets are removed:
+   every unstyled ul/ol in index.html therefore carries role="list" */
 ul,ol{list-style:none}
 
 /* Text read by screen readers but not shown (e.g. "opens in a new tab") */
@@ -46,7 +49,7 @@ ul,ol{list-style:none}
   font-size:var(--text-xs);
   color:var(--color-text-dim);
   position:sticky;top:0;z-index:50;
-  backdrop-filter:blur(6px);
+  /* No backdrop-filter: the background is opaque, so a blur would cost GPU work on every scroll for nothing */
 }
 .statusbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:38px;gap:var(--space-4)}
 .statusbar .dot{color:var(--color-green)}
@@ -54,10 +57,14 @@ ul,ol{list-style:none}
 .nav-links{display:flex;gap:var(--space-5)}
 .nav-links a{display:inline-block;padding:var(--space-1) 0;color:var(--color-text-muted);transition:color var(--duration)}
 .nav-links a:hover{color:var(--color-green)}
-/* Small screens: the menu moves under the prompt instead of disappearing */
+/* Small screens: the menu moves under the prompt instead of disappearing.
+   It wraps onto a second line rather than scrolling sideways, so no link is hidden off-screen,
+   and the bar stops sticking so it does not eat a third of a phone screen. */
 @media(max-width:620px){
+  .statusbar{position:static}
   .statusbar .wrap{flex-direction:column;align-items:flex-start;gap:0;padding-top:var(--space-2);padding-bottom:var(--space-1)}
-  .nav-links{gap:var(--space-4);max-width:100%;overflow-x:auto}
+  .nav-links{flex-wrap:wrap;gap:0 var(--space-4)}
+  section[id],footer[id],main{scroll-margin-top:var(--space-2)}
 }
 
 /* ---- hero ---- */
@@ -80,8 +87,11 @@ ul,ol{list-style:none}
   font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-green);
   letter-spacing:.08em;margin-bottom:var(--space-5);display:flex;align-items:center;gap:var(--space-3);
 }
-.eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--color-green);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,224,160,.5)}70%{box-shadow:0 0 0 8px rgba(63,224,160,0)}100%{box-shadow:0 0 0 0 rgba(63,224,160,0)}}
+/* The ring is a pseudo-element animated with transform and opacity only:
+   the compositor handles it, no repaint on each frame (an animated box-shadow repaints every frame) */
+.eyebrow .pulse{position:relative;flex:none;width:8px;height:8px;border-radius:50%;background:var(--color-green)}
+.eyebrow .pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--color-green);animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.5}70%,100%{transform:scale(3);opacity:0}}
 h1{font-size:var(--text-display);font-weight:700;line-height:var(--leading-tight);letter-spacing:-.02em;margin-bottom:var(--space-4)}
 h1 .role{display:block;color:var(--color-green);font-size:clamp(1.125rem,3vw,1.625rem);font-weight:500;margin-top:var(--space-3);letter-spacing:0}
 .lede{color:var(--color-text-muted);font-size:var(--text-lg);max-width:38rem;margin-bottom:var(--space-6)}
@@ -177,5 +187,34 @@ footer p{color:var(--color-text-muted);margin-bottom:var(--space-5)}
 .foot-links{display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
 .foot-meta{margin-top:var(--space-7);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-dim)}
 
+/* ---- phones (up to 520 px wide) ---- */
+@media(max-width:520px){
+  /* 72 px of padding per section is too much on a 375 px screen */
+  .hero,section,footer{padding:var(--space-7) 0}
+  .sec-head{margin-bottom:var(--space-6)}
+  .project{padding:var(--space-5)}
+  /* Project title and metadata stack instead of squeezing the title into a narrow column */
+  .proj-top{flex-direction:column;gap:var(--space-1)}
+  .project .proj-meta{white-space:normal;padding-top:0}
+  /* Facts: label above value, the long diploma name gets the full width */
+  .facts .row{flex-direction:column;gap:0}
+  .facts .v{text-align:left}
+}
+
+/* ---- touch screens: larger tap targets ----
+   WCAG 2.2 SC 2.5.8 asks for at least 24 x 24 px; on a finger-driven screen
+   the small mono links get 44 px of height (Apple's minimum; Material Design asks for 48 dp). */
+@media(pointer:coarse){
+  .nav-links a{min-height:44px;display:inline-flex;align-items:center}
+  .proj-link{min-height:44px}
+  .btn{min-height:44px}
+}
+
+/* ---- 404 page: amber = attention, the link is down ---- */
+.notfound{min-height:100vh;display:flex;align-items:center;padding:var(--space-8) 0}
+.notfound .wrap{width:100%}
+.notfound .eyebrow,.notfound h1 .role{color:var(--color-amber)}
+
 ::selection{background:var(--color-green);color:var(--color-on-accent)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* "*" does not match pseudo-elements: ::before and ::after are listed so the status pulse ring stops too */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
