@@ -17,6 +17,9 @@ Portfolio d'une page : présentation, compétences, projets (dépôts phares, pr
 ```text
 bazeeza.github.io/
 ├── index.html              Page unique, en français
+├── 404.html                Page « introuvable » servie par GitHub Pages (noindex)
+├── robots.txt              Règles pour les robots, liste les sitemaps du domaine
+├── sitemap.xml             Plan du site (une seule URL)
 ├── assets/
 │   ├── css/
 │   │   ├── tokens.css      Jetons de design : couleurs, polices, espacements
@@ -37,8 +40,42 @@ bazeeza.github.io/
 | Polices système | Aucune requête vers un tiers, affichage immédiat |
 | Balisage sémantique | Les lecteurs d'écran peuvent passer d'une région ou d'un titre à l'autre |
 | Animations coupées avec `prefers-reduced-motion` | Respecte le réglage « réduire les animations » du système |
+| Animations en `transform` et `opacity` seulement | Le navigateur les confie au compositeur : aucun repeint de la page à chaque image |
+| `color-scheme: dark` | Le navigateur peint le fond sombre avant d'avoir reçu le CSS : pas d'éclair blanc au chargement |
 
 Le détail des couleurs, des contrastes et des composants est dans [docs/design-system.md](docs/design-system.md).
+
+## Poids de la page
+
+Mesuré avec `wc -c` le 2026-11-17, fichiers non compressés :
+
+| Fichier | Octets |
+|---|---|
+| `index.html` | 21 562 |
+| `assets/css/main.css` | 13 264 |
+| `assets/css/tokens.css` | 2 154 |
+| `assets/img/topologie.svg` | 2 235 |
+| `assets/img/favicon.svg` | 440 |
+| **Total de la page d'accueil** | **39 655 (5 requêtes)** |
+
+Aucune police, aucun script exécutable, aucune ressource d'un tiers. Le bloc `application/ld+json` de `index.html` est une donnée lue par les moteurs de recherche, pas du JavaScript.
+
+## Référencement (SEO)
+
+| Élément | Où | Rôle |
+|---|---|---|
+| `title` et `meta description` | `index.html` | Titre et résumé affichés dans les résultats de recherche (description sous 160 caractères) |
+| `link rel="canonical"` | `index.html` | Une seule adresse officielle pour la page |
+| Open Graph et `twitter:card` | `index.html` | Aperçu du lien collé dans LinkedIn, Teams ou Slack |
+| Données structurées `Person` | `index.html` | Uniquement des faits déjà visibles sur la page |
+| `robots.txt` | racine | Les robots lisent seulement celui de la racine du domaine : il liste aussi le sitemap de `thm-badge-finder`, servi sous le même domaine |
+| `sitemap.xml` | racine | Plan du site |
+| `404.html` | racine | `noindex`, chemins absolus (`/assets/...`) car la page peut être servie à n'importe quelle profondeur |
+
+> [!NOTE]
+> Il n'y a pas encore d'image `og:image` : la plupart des robots d'aperçu refusent le SVG. Une image PNG de 1200 × 630 px aux couleurs de la bannière reste à produire.
+
+**Reference :** [Google Search Central, SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) · [The Open Graph protocol](https://ogp.me/) · [sitemaps.org](https://www.sitemaps.org/protocol.html) · [GitHub Docs, Creating a custom 404 page](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site)
 
 ## Sources des projets
 
@@ -73,9 +110,12 @@ puis ouvrir `http://localhost:8000`.
 ## Vérifier l'accessibilité
 
 1. Naviguer **au clavier seulement** (Tab, Maj+Tab, Entrée) : le lien « Aller au contenu » apparaît en premier, et le focus reste visible partout.
-2. Réduire la fenêtre sous 620 px : le menu reste accessible sous l'invite.
-3. Activer « réduire les animations » dans le système : l'illustration du héros s'arrête.
-4. Outils des navigateurs : Lighthouse (Chrome) ou l'inspecteur d'accessibilité (Firefox).
+2. Réduire la fenêtre sous 620 px : le menu passe sous l'invite, sur deux lignes au besoin, sans défilement horizontal ; la barre n'est plus collante.
+3. Réduire sous 520 px (mode appareil des outils de développement, par exemple 375 px de large) : titre et métadonnées des cartes l'un sous l'autre, faits « libellé puis valeur ».
+4. Activer « réduire les animations » dans le système : l'illustration du héros et la pastille d'état s'arrêtent.
+5. Sur un écran tactile (ou en émulation tactile), les liens du menu, les boutons et les liens des cartes font au moins 44 px de haut.
+6. Lecteur d'écran (NVDA, VoiceOver) : les fragments anglais (`./about`, `LINK STATUS: UP`) sont lus avec une voix anglaise ; la liste des liens annonce « voir les runbooks Technical Runbooks » plutôt que six « voir le… » identiques.
+7. Outils des navigateurs : Lighthouse (Chrome) ou l'inspecteur d'accessibilité (Firefox).
 
 ## Contact
 
