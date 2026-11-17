@@ -199,6 +199,15 @@ footer p{color:var(--color-text-muted);margin-bottom:var(--space-5)}
   .facts .v{text-align:left}
 }
 
+/* ---- touch screens: larger tap targets ----
+   WCAG 2.2 SC 2.5.8 asks for at least 24 x 24 px; on a finger-driven screen
+   the small mono links get 44 px of height (Apple's minimum; Material Design asks for 48 dp). */
+@media(pointer:coarse){
+  .nav-links a{min-height:44px;display:inline-flex;align-items:center}
+  .proj-link{min-height:44px}
+  .btn{min-height:44px}
+}
+
 /* ---- 404 page: amber = attention, the link is down ---- */
 .notfound{min-height:100vh;display:flex;align-items:center;padding:var(--space-8) 0}
 .notfound .wrap{width:100%}
