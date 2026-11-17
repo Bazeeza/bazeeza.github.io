@@ -111,14 +111,14 @@
     <div class="skills-grid">
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Téléphonie IP</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">FreePBX</li><li class="tag">VoIP</li><li class="tag">SIP</li>
           <li class="tag">Plan de numérotation</li><li class="tag">Proxmox</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Réseautique</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT/PAT</li>
           <li class="tag">OSPF</li><li class="tag">ACL</li><li class="tag">DHCP</li><li class="tag">TCP/IP</li>
           <li class="tag">SNMP</li><li class="tag">Zabbix</li><li class="tag">Câblage T568A/B</li>
@@ -126,7 +126,7 @@
       </div>
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Systèmes &amp; infrastructure</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">Windows Server</li><li class="tag">Linux / Ubuntu</li><li class="tag">AWS</li>
           <li class="tag">Docker</li><li class="tag">Terraform</li><li class="tag">PowerShell</li>
           <li class="tag">Pester</li><li class="tag">Bash</li><li class="tag">CIS Benchmark</li>
@@ -134,7 +134,7 @@
       </div>
       <div class="skill-card">
         <h3><span aria-hidden="true">// </span>Terrain &amp; service</h3>
-        <ul class="tags">
+        <ul class="tags" role="list">
           <li class="tag">Installation d'équipements</li><li class="tag">Service client</li>
           <li class="tag">Travail en hauteur</li><li class="tag">Santé-sécurité</li><li class="tag">Git</li>
         </ul>
@@ -159,7 +159,7 @@
         <p class="proj-meta">public · v1.0.0 · anglais</p>
       </div>
       <p><strong>15 runbooks</strong> pas à pas rédigés selon un gabarit unique : objectif, prérequis, étapes avec résultat attendu, vérification, dépannage et sources officielles. Ils couvrent le poste de travail (UEFI, Windows 11, déploiement de logiciels), le réseau (dépannage couche par couche, câblage T568A/T568B, Wi-Fi, téléphones VoIP/SIP, configuration de base d'un commutateur Cisco), les serveurs Linux, la sauvegarde, Active Directory et Microsoft 365. Chaque modification est vérifiée par GitHub Actions (markdownlint, liens, PSScriptAnalyzer).</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">Câblage RJ45</li><li class="tag">VoIP / SIP</li><li class="tag">Cisco IOS</li>
         <li class="tag">Windows 11</li><li class="tag">PowerShell</li><li class="tag">GitHub Actions</li>
       </ul>
@@ -172,7 +172,7 @@
         <p class="proj-meta">public · v1.0.0 · MIT</p>
       </div>
       <p>Module <strong>PowerShell</strong> compatible Windows PowerShell 5.1 qui automatise les premières minutes d'un billet de soutien. Six commandes : rapport système (version de Windows, numéro de série, mémoire, disques, temps de fonctionnement), diagnostic réseau couche par couche avec la cause probable, inventaire des logiciels lu dans le registre, santé des disques, nettoyage des fichiers temporaires avec aperçu <code>-WhatIf</code>, et rapport HTML autonome à joindre au billet. Testé avec <strong>Pester</strong> sous PowerShell 5.1 et 7, analysé par PSScriptAnalyzer.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">PowerShell 5.1</li><li class="tag">Pester</li><li class="tag">PSScriptAnalyzer</li>
         <li class="tag">CIM / WMI</li><li class="tag">HTML</li><li class="tag">GitHub Actions</li>
       </ul>
@@ -185,7 +185,7 @@
         <p class="proj-meta">public · Linux · ADR</p>
       </div>
       <p>Documentation publique d'une petite infrastructure personnelle : deux serveurs Ubuntu et un poste d'administration reliés par un <strong>VPN maillé basé sur WireGuard</strong>, sans aucun port d'administration public. Chaque choix important est expliqué dans un <strong>ADR</strong> (contexte, décision, coût, options rejetées) : cloisonnement des rôles, ports Docker publiés sur <code>127.0.0.1</code>, surveillance d'un serveur par l'autre. Le dépôt contient aussi le plan de sauvegarde et de reprise, un plan de retour en arrière et les leçons apprises. Un contrôle automatique bloque toute vraie adresse, clé ou jeton.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">Ubuntu Server</li><li class="tag">WireGuard</li><li class="tag">ufw</li>
         <li class="tag">Docker</li><li class="tag">Bash</li><li class="tag">ShellCheck</li>
       </ul>
@@ -200,7 +200,7 @@
         <p class="proj-meta">école · téléphonie</p>
       </div>
       <p>Installation et configuration d'un serveur de téléphonie IP <strong>FreePBX</strong> dans un environnement virtualisé Proxmox : mise en place d'un plan de numérotation et tentative d'interconnexion entre deux réseaux distants. Projet directement lié aux services de téléphonie installés sur le terrain.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">FreePBX</li><li class="tag">Proxmox</li><li class="tag">VoIP</li>
         <li class="tag">SIP</li><li class="tag">Interconnexion réseaux</li>
       </ul>
@@ -212,7 +212,7 @@
         <p class="proj-meta">cours · 420-H63 · 420-H66</p>
       </div>
       <p>Sur un routeur et un commutateur Cisco <strong>physiques</strong> : NAT/PAT, sous-interface VLAN 802.1Q et trunk, communautés <strong>SNMP</strong> pour l'inventaire, puis supervision des postes et serveurs avec <strong>Zabbix 7.0 LTS</strong> (AlmaLinux 9, agents Linux et Windows). En projet de réseautique : réseau redondant entre deux bâtiments avec <strong>routes statiques flottantes</strong> et tests de bascule, plus des exercices OSPF, NAT et ACL. Chaque manipulation est rédigée en runbook reproductible.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">Cisco IOS</li><li class="tag">VLAN 802.1Q</li><li class="tag">NAT/PAT</li>
         <li class="tag">OSPF</li><li class="tag">ACL</li><li class="tag">SNMP</li><li class="tag">Zabbix</li>
       </ul>
@@ -225,7 +225,7 @@
         <p class="proj-meta">cours · 420-H34 · scripts</p>
       </div>
       <p>Deux scripts, en <strong>Bash</strong> pour Ubuntu 24.04 et en <strong>PowerShell</strong> pour Windows 11, qui appliquent des règles du <strong>CIS Benchmark</strong> décrites dans un fichier XML. Le mode validation (<code>-v</code>) vérifie la conformité sans rien modifier ; le mode correction (<code>-c</code>) corrige les écarts avec les droits d'administrateur. Les scripts sont vérifiés automatiquement par ShellCheck et PSScriptAnalyzer, et chacun a son guide d'utilisation.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">CIS Benchmark</li><li class="tag">Bash</li><li class="tag">PowerShell</li>
         <li class="tag">XML</li><li class="tag">ShellCheck</li><li class="tag">PSScriptAnalyzer</li>
       </ul>
@@ -238,7 +238,7 @@
         <p class="proj-meta">cours · équipe · 420-H66</p>
       </div>
       <p>En équipe, déploiement et supervision de services sur <strong>EC2</strong> : GLPI, Nextcloud avec stockage S3, Mattermost avec base <strong>RDS</strong> PostgreSQL, Jellyfin suivi par des tableaux de bord et alarmes <strong>CloudWatch</strong>. Travail final : l'infrastructure d'une entreprise fictive répartie sur deux comptes AWS reliés par <strong>VPC Peering</strong>. Le serveur Vaultwarden déployé avec <strong>Terraform</strong> a ensuite été repris et durci dans AutomationHub : SSH limité à une plage d'adresses, IMDSv2 obligatoire, disque chiffré et validation Terraform automatique.</p>
-      <ul class="tags proj-tags" aria-label="Technologies">
+      <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">AWS EC2 / VPC</li><li class="tag">RDS</li><li class="tag">S3</li>
         <li class="tag">CloudWatch</li><li class="tag">Terraform</li><li class="tag">Docker</li>
       </ul>
@@ -247,7 +247,7 @@
 
     <h3 class="proj-group">Autres réalisations</h3>
 
-    <ul class="other-list">
+    <ul class="other-list" role="list">
       <li>
         <a class="proj-link mono" href="https://bazeeza.github.io/thm-badge-finder/" target="_blank" rel="noopener">TryHackMe Badge Finder <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
         <span class="other-desc">site statique qui associe chaque badge TryHackMe à la salle qui le débloque, avec recherche et suivi de progression · JavaScript, GitHub Pages</span>
@@ -263,7 +263,7 @@
       <h2 class="sec-title" id="experience-title">Expérience</h2>
       <span class="sec-line" aria-hidden="true"></span>
     </div>
-    <ol class="exp">
+    <ol class="exp" role="list">
       <li class="exp-item now">
         <h3 class="exp-role">Agent — Centre d'opérations (SOC), centre de données</h3>
         <p class="exp-org">Centre de données · Montréal</p>

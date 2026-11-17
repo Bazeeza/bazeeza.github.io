@@ -23,6 +23,8 @@ strong{color:var(--color-text);font-weight:600}
 :focus-visible{outline:2px solid var(--color-green);outline-offset:3px;border-radius:var(--radius-sm)}
 .btn.primary:focus-visible,.skip-link:focus-visible{outline-color:var(--color-text)}
 main:focus{outline:none}
+/* Safari/VoiceOver stops announcing a list once its bullets are removed:
+   every unstyled ul/ol in index.html therefore carries role="list" */
 ul,ol{list-style:none}
 
 /* Text read by screen readers but not shown (e.g. "opens in a new tab") */
