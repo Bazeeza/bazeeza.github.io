@@ -12,6 +12,7 @@ body{
   font-family:var(--font-sans);
   line-height:var(--leading-body);
   -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%; /* no automatic text inflation when a phone turns to landscape */
   overflow-x:hidden;
 }
 .mono{font-family:var(--font-mono)}
@@ -54,10 +55,14 @@ ul,ol{list-style:none}
 .nav-links{display:flex;gap:var(--space-5)}
 .nav-links a{display:inline-block;padding:var(--space-1) 0;color:var(--color-text-muted);transition:color var(--duration)}
 .nav-links a:hover{color:var(--color-green)}
-/* Small screens: the menu moves under the prompt instead of disappearing */
+/* Small screens: the menu moves under the prompt instead of disappearing.
+   It wraps onto a second line rather than scrolling sideways, so no link is hidden off-screen,
+   and the bar stops sticking so it does not eat a third of a phone screen. */
 @media(max-width:620px){
+  .statusbar{position:static}
   .statusbar .wrap{flex-direction:column;align-items:flex-start;gap:0;padding-top:var(--space-2);padding-bottom:var(--space-1)}
-  .nav-links{gap:var(--space-4);max-width:100%;overflow-x:auto}
+  .nav-links{flex-wrap:wrap;gap:0 var(--space-4)}
+  section[id],footer[id],main{scroll-margin-top:var(--space-2)}
 }
 
 /* ---- hero ---- */
@@ -179,6 +184,20 @@ footer h2{font-size:var(--text-2xl);margin-bottom:var(--space-3)}
 footer p{color:var(--color-text-muted);margin-bottom:var(--space-5)}
 .foot-links{display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
 .foot-meta{margin-top:var(--space-7);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-dim)}
+
+/* ---- phones (up to 520 px wide) ---- */
+@media(max-width:520px){
+  /* 72 px of padding per section is too much on a 375 px screen */
+  .hero,section,footer{padding:var(--space-7) 0}
+  .sec-head{margin-bottom:var(--space-6)}
+  .project{padding:var(--space-5)}
+  /* Project title and metadata stack instead of squeezing the title into a narrow column */
+  .proj-top{flex-direction:column;gap:var(--space-1)}
+  .project .proj-meta{white-space:normal;padding-top:0}
+  /* Facts: label above value, the long diploma name gets the full width */
+  .facts .row{flex-direction:column;gap:0}
+  .facts .v{text-align:left}
+}
 
 /* ---- 404 page: amber = attention, the link is down ---- */
 .notfound{min-height:100vh;display:flex;align-items:center;padding:var(--space-8) 0}
