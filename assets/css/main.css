@@ -177,5 +177,10 @@ footer p{color:var(--color-text-muted);margin-bottom:var(--space-5)}
 .foot-links{display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
 .foot-meta{margin-top:var(--space-7);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-dim)}
 
+/* ---- 404 page: amber = attention, the link is down ---- */
+.notfound{min-height:100vh;display:flex;align-items:center;padding:var(--space-8) 0}
+.notfound .wrap{width:100%}
+.notfound .eyebrow,.notfound h1 .role{color:var(--color-amber)}
+
 ::selection{background:var(--color-green);color:var(--color-on-accent)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
