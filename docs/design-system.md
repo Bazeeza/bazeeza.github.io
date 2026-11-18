@@ -116,7 +116,7 @@ Objectif : lisible dès **320 px** de large sans défilement horizontal (critèr
 | Carte projet phare | `.project.featured` | Dépôt public maintenu : bord gauche vert (« actif ») |
 | Code en ligne | `.project code` | Option ou commande citée dans une carte (`-WhatIf`, `127.0.0.1`) |
 | Autres réalisations | `.other-list` | Une ligne par projet secondaire, sans carte : lien puis description |
-| Chronologie | `.exp` | Liste ordonnée `ol`, dates dans `time` |
+| Chronologie | `.exp` | Liste ordonnée `ol`, dates dans `time` ; emplois triés par date de fin, le plus récent en haut (`.now` = emploi en cours) |
 
 ## Règles d'accessibilité
 
