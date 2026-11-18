@@ -129,7 +129,7 @@
         <ul class="tags" role="list">
           <li class="tag">Windows Server</li><li class="tag">Linux / Ubuntu</li><li class="tag">AWS</li>
           <li class="tag">Docker</li><li class="tag">Terraform</li><li class="tag">PowerShell</li>
-          <li class="tag">Pester</li><li class="tag">Bash</li><li class="tag">CIS Benchmark</li>
+          <li class="tag">Pester</li><li class="tag">Bash</li><li class="tag">Python</li><li class="tag">CIS Benchmark</li>
         </ul>
       </div>
       <div class="skill-card">
@@ -184,10 +184,11 @@
         <h4 class="proj-title">Homelab Infrastructure — documentation anonymisée</h4>
         <p class="proj-meta">public · Linux · ADR</p>
       </div>
-      <p>Documentation publique d'une petite infrastructure personnelle : deux serveurs Ubuntu et un poste d'administration reliés par un <strong>VPN maillé basé sur WireGuard</strong>, sans aucun port d'administration public. Chaque choix important est expliqué dans un <strong>ADR</strong> (contexte, décision, coût, options rejetées) : cloisonnement des rôles, ports Docker publiés sur <code>127.0.0.1</code>, surveillance d'un serveur par l'autre. Le dépôt contient aussi le plan de sauvegarde et de reprise, un plan de retour en arrière et les leçons apprises. Un contrôle automatique bloque toute vraie adresse, clé ou jeton.</p>
+      <p>Documentation publique d'une petite infrastructure personnelle : deux serveurs Ubuntu et un poste d'administration reliés par un <strong>VPN maillé basé sur WireGuard</strong>, sans aucun port d'administration public. Chaque choix important est expliqué dans un <strong>ADR</strong> (contexte, décision, coût, options rejetées) : cloisonnement des rôles, ports Docker publiés sur <code>127.0.0.1</code>, surveillance d'un serveur par l'autre. Côté code : un script de veille croisée qui n'alerte qu'une fois par panne, un relais de messagerie en <strong>Python</strong> (bibliothèque standard seulement) avec ses tests unitaires et une unité <strong>systemd</strong> durcie expliquée ligne par ligne. Le dépôt contient aussi le plan de sauvegarde et de reprise, un plan de retour en arrière et les leçons apprises. Un contrôle automatique bloque toute vraie adresse, clé ou jeton.</p>
       <ul class="tags proj-tags" role="list" aria-label="Technologies">
         <li class="tag">Ubuntu Server</li><li class="tag">WireGuard</li><li class="tag">ufw</li>
-        <li class="tag">Docker</li><li class="tag">Bash</li><li class="tag">ShellCheck</li>
+        <li class="tag">Docker</li><li class="tag">Bash</li><li class="tag">Python</li>
+        <li class="tag">systemd</li><li class="tag">ShellCheck</li>
       </ul>
       <a class="proj-link mono" href="https://github.com/Bazeeza/homelab-infrastructure" target="_blank" rel="noopener">voir la documentation<span class="visually-hidden"> Homelab Infrastructure</span> <span aria-hidden="true">→</span><span class="visually-hidden"> (nouvel onglet)</span></a>
     </article>
