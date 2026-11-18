@@ -98,8 +98,23 @@ Les tailles sont en `rem` : elles suivent la taille de texte choisie dans le nav
 | ≤ 620 px | Menu sous l'invite, sur plusieurs lignes au besoin ; barre d'état non collante |
 | ≤ 520 px | Marges de section et de carte réduites, titre et métadonnées des cartes empilés, faits « libellé puis valeur » |
 | `pointer: coarse` | Écran tactile : liens du menu, boutons et liens des cartes d'au moins 44 px de haut |
+| `print` | Impression et « Enregistrer en PDF » : palette claire, barre d'état, illustration et boutons d'action retirés, cartes jamais coupées entre deux pages, adresse des liens de projet imprimée |
 
 Objectif : lisible dès **320 px** de large sans défilement horizontal (critère WCAG 1.4.10, *Reflow*). À vérifier dans un navigateur à chaque changement de mise en page.
+
+### Palette d'impression
+
+Les navigateurs n'impriment pas les couleurs de fond par défaut : un texte clair prévu pour le fond sombre disparaîtrait. `tokens.css` redéfinit donc les jetons sous `@media print`, avec des teintes foncées des mêmes couleurs. Ratios sur blanc, calculés avec la formule de la WCAG :
+
+| Jeton | Valeur imprimée | Sur blanc |
+|---|---|---|
+| `--color-text` | `#000000` | 21:1 |
+| `--color-text-muted` | `#1f2933` | 14,7:1 |
+| `--color-text-dim` | `#4a5562` | 7,6:1 |
+| `--color-green` | `#0b6e47` | 6,3:1 |
+| `--color-blue` | `#0b5394` | 7,4:1 |
+| `--color-amber` | `#8a5000` | 6,5:1 |
+| `--color-violet` | `#6a3d9a` | 7,6:1 |
 
 ## Composants
 
@@ -116,14 +131,14 @@ Objectif : lisible dès **320 px** de large sans défilement horizontal (critèr
 | Carte projet phare | `.project.featured` | Dépôt public maintenu : bord gauche vert (« actif ») |
 | Code en ligne | `.project code` | Option ou commande citée dans une carte (`-WhatIf`, `127.0.0.1`) |
 | Autres réalisations | `.other-list` | Une ligne par projet secondaire, sans carte : lien puis description |
-| Chronologie | `.exp` | Liste ordonnée `ol`, dates dans `time` |
+| Chronologie | `.exp` | Liste ordonnée `ol`, dates dans `time` ; emplois triés par date de fin, le plus récent en haut (`.now` = emploi en cours) |
 
 ## Règles d'accessibilité
 
 1. Un seul `h1`, puis `h2` par section et `h3` dans les sections : aucun niveau sauté. Dans « Projets », les groupes sont des `h3` et les projets des `h4`.
 2. Repères : `header`, `nav` (avec `aria-label`), `main`, `footer`.
 3. Le focus clavier est **toujours visible** (`:focus-visible`, contour de 2 px).
-4. Les symboles décoratifs (flèches, enveloppe, puce de l'invite) sont `aria-hidden`.
+4. Les symboles décoratifs (flèches, enveloppe, puce de l'invite) sont `aria-hidden`. L'enveloppe (U+2709) et la flèche oblique (U+2197) figurent aussi dans la liste des emojis : elles sont suivies du sélecteur de variante texte U+FE0E (`&#xFE0E;`), sinon certains téléphones les dessinent en emoji couleur. Le site n'utilise aucun emoji.
 5. Un lien qui ouvre un nouvel onglet l'annonce avec un texte masqué visuellement.
 6. Une image décorative a `alt=""` ; une image qui informe a un `alt` qui dit ce qu'elle montre.
 7. Un fragment en anglais dans la page française (menu `./about`, `LINK STATUS: UP`, `exit code 0`) porte `lang="en"` : le lecteur d'écran change de voix au lieu de le prononcer « à la française » (critère 3.1.2).
