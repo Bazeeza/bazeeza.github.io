@@ -10,7 +10,7 @@
 Portfolio d'une page : présentation, compétences, projets (dépôts phares, projets de cours, autres réalisations), expérience et contact.
 
 > [!NOTE]
-> Le dépôt est **privé** et le site est **hors ligne** pour le moment. Sa remise en ligne est une décision du propriétaire.
+> Le dépôt est **privé** et le site est **hors ligne** pour le moment. Sa remise en ligne est une décision du propriétaire ; les étapes sont dans [docs/mise-en-ligne.md](docs/mise-en-ligne.md).
 
 ## Structure
 
@@ -28,7 +28,8 @@ bazeeza.github.io/
 │       ├── favicon.svg     Icône d'onglet
 │       └── topologie.svg   Illustration décorative du héros
 └── docs/
-    └── design-system.md    Palette, contrastes, typographie, composants, règles d'accessibilité
+    ├── design-system.md    Palette, contrastes, typographie, composants, règles d'accessibilité
+    └── mise-en-ligne.md    Liste de vérification avant de republier le site
 ```
 
 ## Choix techniques
