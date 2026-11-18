@@ -58,3 +58,25 @@
   --content-width:60rem;
   --duration:.2s;
 }
+
+/* Print and "Save as PDF": black text on white paper.
+   Browsers drop background colors when printing, so light text would vanish.
+   Signal colors are darkened versions of the same hues (all above 4.5:1 on white). */
+@media print{
+  :root{
+    color-scheme:light;
+    --color-bg:#ffffff;
+    --color-surface-sunken:#ffffff;
+    --color-surface:#ffffff;
+    --color-border:#c4ccd6;
+    --color-border-strong:#8a96a3;
+    --color-text:#000000;
+    --color-text-muted:#1f2933;
+    --color-text-dim:#4a5562;
+    --color-on-accent:#000000;
+    --color-green:#0b6e47;
+    --color-blue:#0b5394;
+    --color-amber:#8a5000;
+    --color-violet:#6a3d9a;
+  }
+}

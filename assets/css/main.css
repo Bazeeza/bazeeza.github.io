@@ -216,6 +216,22 @@ footer p{color:var(--color-text-muted);margin-bottom:var(--space-5)}
 .notfound .wrap{width:100%}
 .notfound .eyebrow,.notfound h1 .role{color:var(--color-amber)}
 
+/* ---- print and "Save as PDF" ----
+   Colors switch to the print palette in tokens.css. Screen-only parts are dropped,
+   cards are not split across pages, and project links print their address. */
+@media print{
+  .statusbar,.skip-link,.hero::before,.hero-art,.eyebrow .pulse,.cta-row,.sec-line{display:none}
+  .hero,section,footer{padding:var(--space-5) 0}
+  .sec-head{margin-bottom:var(--space-4)}
+  .project,.skill-card,.exp-item,.facts,.other-list li{break-inside:avoid}
+  .sec-head,.proj-group{break-after:avoid}
+  /* No fill on paper: buttons become plain outlined text */
+  .btn,.btn.primary{background:none;color:var(--color-text);border-color:var(--color-border)}
+  .proj-link{display:inline}
+  .proj-link::after,.foot-links a[href^="http"]::after{content:" " attr(href);font-size:var(--text-xs);color:var(--color-text-dim);word-break:break-all}
+  .foot-meta{margin-top:var(--space-4)}
+}
+
 ::selection{background:var(--color-green);color:var(--color-on-accent)}
 /* "*" does not match pseudo-elements: ::before and ::after are listed so the status pulse ring stops too */
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

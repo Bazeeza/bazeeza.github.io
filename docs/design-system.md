@@ -98,8 +98,23 @@ Les tailles sont en `rem` : elles suivent la taille de texte choisie dans le nav
 | ≤ 620 px | Menu sous l'invite, sur plusieurs lignes au besoin ; barre d'état non collante |
 | ≤ 520 px | Marges de section et de carte réduites, titre et métadonnées des cartes empilés, faits « libellé puis valeur » |
 | `pointer: coarse` | Écran tactile : liens du menu, boutons et liens des cartes d'au moins 44 px de haut |
+| `print` | Impression et « Enregistrer en PDF » : palette claire, barre d'état, illustration et boutons d'action retirés, cartes jamais coupées entre deux pages, adresse des liens de projet imprimée |
 
 Objectif : lisible dès **320 px** de large sans défilement horizontal (critère WCAG 1.4.10, *Reflow*). À vérifier dans un navigateur à chaque changement de mise en page.
+
+### Palette d'impression
+
+Les navigateurs n'impriment pas les couleurs de fond par défaut : un texte clair prévu pour le fond sombre disparaîtrait. `tokens.css` redéfinit donc les jetons sous `@media print`, avec des teintes foncées des mêmes couleurs. Ratios sur blanc, calculés avec la formule de la WCAG :
+
+| Jeton | Valeur imprimée | Sur blanc |
+|---|---|---|
+| `--color-text` | `#000000` | 21:1 |
+| `--color-text-muted` | `#1f2933` | 14,7:1 |
+| `--color-text-dim` | `#4a5562` | 7,6:1 |
+| `--color-green` | `#0b6e47` | 6,3:1 |
+| `--color-blue` | `#0b5394` | 7,4:1 |
+| `--color-amber` | `#8a5000` | 6,5:1 |
+| `--color-violet` | `#6a3d9a` | 7,6:1 |
 
 ## Composants
 
