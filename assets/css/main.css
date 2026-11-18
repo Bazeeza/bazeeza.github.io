@@ -57,6 +57,9 @@ ul,ol{list-style:none}
 .nav-links{display:flex;gap:var(--space-5)}
 .nav-links a{display:inline-block;padding:var(--space-1) 0;color:var(--color-text-muted);transition:color var(--duration)}
 .nav-links a:hover{color:var(--color-green)}
+/* Anchor targets stop below the sticky status bar instead of under it.
+   Declared before the 620 px block: same specificity, so the later (mobile) value must come last to win. */
+section[id],footer[id],main{scroll-margin-top:4rem}
 /* Small screens: the menu moves under the prompt instead of disappearing.
    It wraps onto a second line rather than scrolling sideways, so no link is hidden off-screen,
    and the bar stops sticking so it does not eat a third of a phone screen. */
@@ -111,8 +114,6 @@ h1 .role{display:block;color:var(--color-green);font-size:clamp(1.125rem,3vw,1.6
 
 /* ---- section framing ---- */
 section{padding:var(--space-8) 0;border-bottom:1px solid var(--color-border)}
-/* Anchor targets stop below the sticky status bar instead of under it */
-section[id],footer[id],main{scroll-margin-top:4rem}
 .sec-head{display:flex;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-7)}
 .sec-num{font-family:var(--font-mono);color:var(--color-blue);font-size:var(--text-sm)}
 .sec-title{font-size:var(--text-2xl);font-weight:600;letter-spacing:-.01em}
