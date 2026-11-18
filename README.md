@@ -42,21 +42,24 @@ bazeeza.github.io/
 | Animations coupées avec `prefers-reduced-motion` | Respecte le réglage « réduire les animations » du système |
 | Animations en `transform` et `opacity` seulement | Le navigateur les confie au compositeur : aucun repeint de la page à chaque image |
 | `color-scheme: dark` | Le navigateur peint le fond sombre avant d'avoir reçu le CSS : pas d'éclair blanc au chargement |
+| Feuille d'impression | Un recruteur peut imprimer la page ou l'enregistrer en PDF : texte noir sur blanc, adresses des projets imprimées |
 
 Le détail des couleurs, des contrastes et des composants est dans [docs/design-system.md](docs/design-system.md).
 
 ## Poids de la page
 
-Mesuré avec `wc -c` le 2026-11-17, fichiers non compressés :
+Mesuré avec `wc -c` le 2026-11-18, fichiers non compressés :
 
 | Fichier | Octets |
 |---|---|
-| `index.html` | 21 562 |
-| `assets/css/main.css` | 13 392 |
-| `assets/css/tokens.css` | 2 154 |
+| `index.html` | 22 083 |
+| `assets/css/main.css` | 14 399 |
+| `assets/css/tokens.css` | 2 807 |
 | `assets/img/topologie.svg` | 2 235 |
 | `assets/img/favicon.svg` | 440 |
-| **Total de la page d'accueil** | **39 783 (5 requêtes)** |
+| **Total de la page d'accueil** | **41 964 (5 requêtes)** |
+
+Les règles d'impression (`@media print`) font partie des deux feuilles de style : elles ne coûtent aucune requête de plus.
 
 Aucune police, aucun script exécutable, aucune ressource d'un tiers. Le bloc `application/ld+json` de `index.html` est une donnée lue par les moteurs de recherche, pas du JavaScript.
 
@@ -118,6 +121,7 @@ La page `404.html` utilise des chemins absolus (`/assets/...`) : ouverte directe
 5. Sur un écran tactile (ou en émulation tactile), les liens du menu, les boutons et les liens des cartes font au moins 44 px de haut.
 6. Lecteur d'écran (NVDA, VoiceOver) : les fragments anglais (`./about`, `LINK STATUS: UP`) sont lus avec une voix anglaise ; la liste des liens annonce « voir les runbooks Technical Runbooks » plutôt que six « voir le… » identiques.
 7. Outils des navigateurs : Lighthouse (Chrome) ou l'inspecteur d'accessibilité (Firefox).
+8. Aperçu avant impression (Ctrl+P) : fond blanc, aucune barre de menu ni bouton, aucune carte coupée en deux, adresse imprimée après chaque lien de projet.
 
 ## Contact
 
