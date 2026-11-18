@@ -123,7 +123,7 @@ Objectif : lisible dès **320 px** de large sans défilement horizontal (critèr
 1. Un seul `h1`, puis `h2` par section et `h3` dans les sections : aucun niveau sauté. Dans « Projets », les groupes sont des `h3` et les projets des `h4`.
 2. Repères : `header`, `nav` (avec `aria-label`), `main`, `footer`.
 3. Le focus clavier est **toujours visible** (`:focus-visible`, contour de 2 px).
-4. Les symboles décoratifs (flèches, enveloppe, puce de l'invite) sont `aria-hidden`.
+4. Les symboles décoratifs (flèches, enveloppe, puce de l'invite) sont `aria-hidden`. L'enveloppe (U+2709) et la flèche oblique (U+2197) figurent aussi dans la liste des emojis : elles sont suivies du sélecteur de variante texte U+FE0E (`&#xFE0E;`), sinon certains téléphones les dessinent en emoji couleur. Le site n'utilise aucun emoji.
 5. Un lien qui ouvre un nouvel onglet l'annonce avec un texte masqué visuellement.
 6. Une image décorative a `alt=""` ; une image qui informe a un `alt` qui dit ce qu'elle montre.
 7. Un fragment en anglais dans la page française (menu `./about`, `LINK STATUS: UP`, `exit code 0`) porte `lang="en"` : le lecteur d'écran change de voix au lieu de le prononcer « à la française » (critère 3.1.2).
