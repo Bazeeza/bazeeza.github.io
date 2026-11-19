@@ -15,14 +15,14 @@ flowchart LR
 ## 1. Contenu
 
 - [ ] Chaque carte de projet correspond encore au README de son dépôt (voir « Sources des projets » dans le [README](../README.md#sources-des-projets)).
-- [ ] Les faits de « À propos » (formation, permis, disponibilité) et les dates de l'expérience sont exacts et cohérents entre eux.
+- [ ] Les faits de « À propos » (formation, permis, disponibilité) sont exacts et cohérents entre eux.
 - [ ] Aucune donnée personnelle de trop : ni téléphone, ni adresse, ni courriel personnel, ni nom d'employeur, ni détail de serveur. Contact public seulement.
 - [ ] `lastmod` de `sitemap.xml` = date du dernier changement de contenu.
 
 ## 2. Liens
 
 - [ ] Chaque lien de carte ouvre une page **publique** : un dépôt privé renvoie une erreur 404 à un visiteur non connecté. Tester dans une fenêtre de navigation privée.
-- [ ] Les ancres du menu (`#about`, `#skills`, `#projects`, `#experience`, `#contact`) et le lien « Aller au contenu » mènent au bon endroit.
+- [ ] Les ancres du menu (`#about`, `#skills`, `#projects`, `#contact`) et le lien « Aller au contenu » mènent au bon endroit.
 - [ ] Les liens `mailto:` ouvrent un message adressé au contact public.
 
 ## 3. Essais locaux

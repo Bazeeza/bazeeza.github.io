@@ -7,7 +7,7 @@
 
 > **English summary.** Source of the personal portfolio of `bazeeza`, a network and telecommunications technician in training. One static HTML page, two stylesheets, no JavaScript, no web fonts, no build step. Colors come from design tokens shared with the GitHub profile banner, and the markup follows WCAG 2.2 AA practices (landmarks, heading order, visible focus, contrast-checked colors). The site is currently offline.
 
-Portfolio d'une page : présentation, compétences, projets (dépôts phares, projets de cours, autres réalisations), expérience et contact.
+Portfolio d'une page : présentation, compétences, projets (dépôts phares, projets de cours, autres réalisations) et contact.
 
 > [!NOTE]
 > Le dépôt est **privé** et le site est **hors ligne** pour le moment. Sa remise en ligne est une décision du propriétaire ; les étapes sont dans [docs/mise-en-ligne.md](docs/mise-en-ligne.md).
