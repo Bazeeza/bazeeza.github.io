@@ -1,0 +1,38 @@
+name: Links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Weekly run: a linked repository can become private or be renamed
+  # without any change in this repository
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      # What a visitor clicks: every link of the two pages, online.
+      # A link to a private repository returns 404 here, as it does for a visitor.
+      # --root-dir resolves the absolute paths of 404.html (/assets/...) inside the repository.
+      - name: Check page links
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --no-progress --root-dir "${{ github.workspace }}" index.html 404.html
+          fail: true
+
+      # Documentation: links between files only, so a slow external site
+      # cannot make the build fail
+      - name: Check relative links in the documentation
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --offline --no-progress "./**/*.md"
+          fail: true

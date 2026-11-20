@@ -4,6 +4,7 @@
 ![CSS](https://img.shields.io/badge/CSS-design_tokens-3fe0a0?style=flat-square&labelColor=070d1c&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-none-c792ea?style=flat-square&labelColor=070d1c)
 ![Accessibility](https://img.shields.io/badge/target-WCAG_2.2_AA-ffb454?style=flat-square&labelColor=070d1c)
+[![Links](https://img.shields.io/github/actions/workflow/status/Bazeeza/bazeeza.github.io/links.yml?branch=main&style=flat-square&labelColor=070d1c&label=links)](https://github.com/Bazeeza/bazeeza.github.io/actions/workflows/links.yml)
 
 > **English summary.** Source of the personal portfolio of `bazeeza`, a network and telecommunications technician in training. One static HTML page, two stylesheets, no JavaScript, no web fonts, no build step. Colors come from design tokens shared with the GitHub profile banner, and the markup follows WCAG 2.2 AA practices (landmarks, heading order, visible focus, contrast-checked colors). Live at <https://bazeeza.github.io/>.
 
@@ -20,6 +21,8 @@ bazeeza.github.io/
 ├── 404.html                Page « introuvable » servie par GitHub Pages (noindex)
 ├── robots.txt              Règles pour les robots, liste les sitemaps du domaine
 ├── sitemap.xml             Plan du site (une seule URL)
+├── .github/workflows/
+│   └── links.yml           Vérification des liens à chaque push et chaque lundi
 ├── assets/
 │   ├── css/
 │   │   ├── tokens.css      Jetons de design : couleurs, polices, espacements
@@ -98,6 +101,17 @@ Chaque carte de la section « Projets » résume un dépôt. Le texte reprend ce
 
 > [!NOTE]
 > `Projets-Runbooks` est **privé** : un lien vers ce dépôt renverrait une erreur 404 à un visiteur. Les cartes Cisco/Zabbix et CIS n'ont donc **pas de lien** (retirés le 2026-11-20). Si le dépôt devient public un jour (après vérification de tout son historique), les liens pourront être remis.
+
+## Vérification automatique des liens
+
+Le workflow [`links.yml`](.github/workflows/links.yml) lance [lychee](https://github.com/lycheeverse/lychee) :
+
+| Étape | Fichiers | Mode | Ce qu'elle attrape |
+|---|---|---|---|
+| Liens de la page | `index.html`, `404.html` | En ligne | Un dépôt devenu privé ou renommé (erreur 404 pour un visiteur), un fichier `/assets/...` manquant |
+| Liens de la documentation | `**/*.md` | Hors ligne | Un lien cassé entre deux fichiers du dépôt |
+
+Il tourne à chaque push, à chaque pull request et **chaque lundi** : un lien peut casser sans aucun changement dans ce dépôt, par exemple quand un autre dépôt change de visibilité.
 
 ## Aperçu en local
 
