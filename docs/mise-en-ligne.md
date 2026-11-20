@@ -1,7 +1,7 @@
 # Liste de vérification avant mise en ligne
 
 > [!NOTE]
-> Le dépôt est privé et le site hors ligne. Cette liste sert le jour où le propriétaire décide de le republier. Chaque case se coche **dans un navigateur**, sur la vraie page : rien ici ne remplace un essai réel.
+> Le site a été republié le 2026-11-19. Cette liste sert maintenant **avant chaque changement publié** : les sections 1 à 3 se refont à chaque fois, la section 4 est faite, la section 5 se vérifie après la fusion. Chaque case se coche **dans un navigateur**, sur la vraie page : rien ici ne remplace un essai réel.
 
 ```mermaid
 flowchart LR
@@ -39,14 +39,20 @@ Serveur statique à la racine du dépôt (voir [Aperçu en local](../README.md#a
 
 ## 4. Publication (propriétaire seulement)
 
-- [ ] Rendre le dépôt public : *Settings* → *General* → *Danger Zone* → *Change visibility*. Avant, relire **tout l'historique**, pas seulement la dernière version des fichiers.
-- [ ] *Settings* → *Pages* : source « Deploy from a branch », branche `main`, dossier `/ (root)`.
-- [ ] Case *Enforce HTTPS* cochée.
+Fait le 2026-11-19 par le propriétaire, après relecture de l'historique.
+
+- [x] Rendre le dépôt public : *Settings* → *General* → *Danger Zone* → *Change visibility*. Avant, relire **tout l'historique**, pas seulement la dernière version des fichiers.
+- [x] *Settings* → *Pages* : source « Deploy from a branch », branche `main`, dossier `/ (root)`.
+- [ ] Case *Enforce HTTPS* cochée (à confirmer dans *Settings* → *Pages*).
 
 ## 5. Essais en ligne
 
-- [ ] `https://bazeeza.github.io/` répond, et une adresse inventée (par exemple `/test-404`) affiche la page 404 personnalisée.
-- [ ] `https://bazeeza.github.io/robots.txt` et `https://bazeeza.github.io/sitemap.xml` répondent.
+Relevé du 2026-11-20 : la page d'accueil et `sitemap.xml` répondent (HTTP 200), et une adresse inventée renvoie bien le code 404. Le reste n'a pas encore été vu dans un navigateur.
+
+- [x] `https://bazeeza.github.io/` répond.
+- [ ] Une adresse inventée (par exemple `/test-404`) affiche la page 404 **personnalisée**, pas celle de GitHub.
+- [x] `https://bazeeza.github.io/sitemap.xml` répond.
+- [ ] `https://bazeeza.github.io/robots.txt` répond.
 - [ ] Test des résultats enrichis de Google sur l'adresse publique : les données structurées `Person` sont lues sans erreur.
 - [ ] Aperçu d'un lien collé dans un message privé (LinkedIn ou Teams) : titre et description corrects. Sans `og:image`, l'aperçu n'a pas d'image : c'est attendu.
 - [ ] Facultatif : déclarer le site dans Google Search Console et y soumettre le sitemap.
