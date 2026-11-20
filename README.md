@@ -5,12 +5,12 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-none-c792ea?style=flat-square&labelColor=070d1c)
 ![Accessibility](https://img.shields.io/badge/target-WCAG_2.2_AA-ffb454?style=flat-square&labelColor=070d1c)
 
-> **English summary.** Source of the personal portfolio of `bazeeza`, a network and telecommunications technician in training. One static HTML page, two stylesheets, no JavaScript, no web fonts, no build step. Colors come from design tokens shared with the GitHub profile banner, and the markup follows WCAG 2.2 AA practices (landmarks, heading order, visible focus, contrast-checked colors). The site is currently offline.
+> **English summary.** Source of the personal portfolio of `bazeeza`, a network and telecommunications technician in training. One static HTML page, two stylesheets, no JavaScript, no web fonts, no build step. Colors come from design tokens shared with the GitHub profile banner, and the markup follows WCAG 2.2 AA practices (landmarks, heading order, visible focus, contrast-checked colors). Live at <https://bazeeza.github.io/>.
 
 Portfolio d'une page : présentation, compétences, projets (dépôts phares, projets de cours, autres réalisations) et contact.
 
 > [!NOTE]
-> Le dépôt est **privé** et le site est **hors ligne** pour le moment. Sa remise en ligne est une décision du propriétaire ; les étapes sont dans [docs/mise-en-ligne.md](docs/mise-en-ligne.md).
+> Le site est **en ligne** depuis le 2026-11-19 : <https://bazeeza.github.io/> (GitHub Pages, branche `main`). La liste [docs/mise-en-ligne.md](docs/mise-en-ligne.md) sert maintenant à relire chaque changement avant de le publier.
 
 ## Structure
 
@@ -49,16 +49,16 @@ Le détail des couleurs, des contrastes et des composants est dans [docs/design-
 
 ## Poids de la page
 
-Mesuré avec `wc -c` le 2026-11-18, fichiers non compressés :
+Mesuré avec `wc -c` le 2026-11-20, fichiers non compressés :
 
 | Fichier | Octets |
 |---|---|
-| `index.html` | 22 083 |
+| `index.html` | 19 392 |
 | `assets/css/main.css` | 14 399 |
 | `assets/css/tokens.css` | 2 807 |
 | `assets/img/topologie.svg` | 2 235 |
 | `assets/img/favicon.svg` | 440 |
-| **Total de la page d'accueil** | **41 964 (5 requêtes)** |
+| **Total de la page d'accueil** | **39 273 (5 requêtes)** |
 
 Les règles d'impression (`@media print`) font partie des deux feuilles de style : elles ne coûtent aucune requête de plus.
 
@@ -97,7 +97,7 @@ Chaque carte de la section « Projets » résume un dépôt. Le texte reprend ce
 | Autres réalisations | TryHackMe Badge Finder | [Bazeeza/thm-badge-finder](https://github.com/Bazeeza/thm-badge-finder) | Public |
 
 > [!NOTE]
-> Les liens des cartes Cisco et CIS mènent à `Projets-Runbooks`, qui est **privé** : un visiteur verrait une erreur 404. Avant de remettre le site en ligne, il faut soit rendre ce dépôt public (après avoir vérifié tout son historique), soit retirer ces deux liens.
+> `Projets-Runbooks` est **privé** : un lien vers ce dépôt renverrait une erreur 404 à un visiteur. Les cartes Cisco/Zabbix et CIS n'ont donc **pas de lien** (retirés le 2026-11-20). Si le dépôt devient public un jour (après vérification de tout son historique), les liens pourront être remis.
 
 ## Aperçu en local
 
@@ -120,7 +120,7 @@ La page `404.html` utilise des chemins absolus (`/assets/...`) : ouverte directe
 3. Réduire sous 520 px (mode appareil des outils de développement, par exemple 375 px de large) : titre et métadonnées des cartes l'un sous l'autre, faits « libellé puis valeur ».
 4. Activer « réduire les animations » dans le système : l'illustration du héros et la pastille d'état s'arrêtent.
 5. Sur un écran tactile (ou en émulation tactile), les liens du menu, les boutons et les liens des cartes font au moins 44 px de haut.
-6. Lecteur d'écran (NVDA, VoiceOver) : les fragments anglais (`./about`, `LINK STATUS: UP`) sont lus avec une voix anglaise ; la liste des liens annonce « voir les runbooks Technical Runbooks » plutôt que six « voir le… » identiques.
+6. Lecteur d'écran (NVDA, VoiceOver) : les fragments anglais (`./about`, `LINK STATUS: UP`) sont lus avec une voix anglaise ; la liste des liens annonce « voir les runbooks Technical Runbooks » plutôt que plusieurs « voir le… » identiques.
 7. Outils des navigateurs : Lighthouse (Chrome) ou l'inspecteur d'accessibilité (Firefox).
 8. Aperçu avant impression (Ctrl+P) : fond blanc, aucune barre de menu ni bouton, aucune carte coupée en deux, adresse imprimée après chaque lien de projet.
 
