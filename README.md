@@ -4,13 +4,14 @@
 ![CSS](https://img.shields.io/badge/CSS-design_tokens-3fe0a0?style=flat-square&labelColor=070d1c&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-none-c792ea?style=flat-square&labelColor=070d1c)
 ![Accessibility](https://img.shields.io/badge/target-WCAG_2.2_AA-ffb454?style=flat-square&labelColor=070d1c)
+[![Links](https://img.shields.io/github/actions/workflow/status/Bazeeza/bazeeza.github.io/links.yml?branch=main&style=flat-square&labelColor=070d1c&label=links)](https://github.com/Bazeeza/bazeeza.github.io/actions/workflows/links.yml)
 
-> **English summary.** Source of the personal portfolio of `bazeeza`, a network and telecommunications technician in training. One static HTML page, two stylesheets, no JavaScript, no web fonts, no build step. Colors come from design tokens shared with the GitHub profile banner, and the markup follows WCAG 2.2 AA practices (landmarks, heading order, visible focus, contrast-checked colors). The site is currently offline.
+> **English summary.** Source of the personal portfolio of `bazeeza`, a network and telecommunications technician in training. One static HTML page, two stylesheets, no JavaScript, no web fonts, no build step. Colors come from design tokens shared with the GitHub profile banner, and the markup follows WCAG 2.2 AA practices (landmarks, heading order, visible focus, contrast-checked colors). Live at <https://bazeeza.github.io/>.
 
 Portfolio d'une page : présentation, compétences, projets (dépôts phares, projets de cours, autres réalisations) et contact.
 
 > [!NOTE]
-> Le dépôt est **privé** et le site est **hors ligne** pour le moment. Sa remise en ligne est une décision du propriétaire ; les étapes sont dans [docs/mise-en-ligne.md](docs/mise-en-ligne.md).
+> Le site est **en ligne** depuis le 2026-11-19 : <https://bazeeza.github.io/> (GitHub Pages, branche `main`). La liste [docs/mise-en-ligne.md](docs/mise-en-ligne.md) sert maintenant à relire chaque changement avant de le publier.
 
 ## Structure
 
@@ -20,6 +21,8 @@ bazeeza.github.io/
 ├── 404.html                Page « introuvable » servie par GitHub Pages (noindex)
 ├── robots.txt              Règles pour les robots, liste les sitemaps du domaine
 ├── sitemap.xml             Plan du site (une seule URL)
+├── .github/workflows/
+│   └── links.yml           Vérification des liens à chaque push et chaque lundi
 ├── assets/
 │   ├── css/
 │   │   ├── tokens.css      Jetons de design : couleurs, polices, espacements
@@ -49,16 +52,16 @@ Le détail des couleurs, des contrastes et des composants est dans [docs/design-
 
 ## Poids de la page
 
-Mesuré avec `wc -c` le 2026-11-18, fichiers non compressés :
+Mesuré avec `wc -c` le 2026-11-20, fichiers non compressés :
 
 | Fichier | Octets |
 |---|---|
-| `index.html` | 22 083 |
+| `index.html` | 19 392 |
 | `assets/css/main.css` | 14 399 |
 | `assets/css/tokens.css` | 2 807 |
 | `assets/img/topologie.svg` | 2 235 |
 | `assets/img/favicon.svg` | 440 |
-| **Total de la page d'accueil** | **41 964 (5 requêtes)** |
+| **Total de la page d'accueil** | **39 273 (5 requêtes)** |
 
 Les règles d'impression (`@media print`) font partie des deux feuilles de style : elles ne coûtent aucune requête de plus.
 
@@ -97,7 +100,18 @@ Chaque carte de la section « Projets » résume un dépôt. Le texte reprend ce
 | Autres réalisations | TryHackMe Badge Finder | [Bazeeza/thm-badge-finder](https://github.com/Bazeeza/thm-badge-finder) | Public |
 
 > [!NOTE]
-> Les liens des cartes Cisco et CIS mènent à `Projets-Runbooks`, qui est **privé** : un visiteur verrait une erreur 404. Avant de remettre le site en ligne, il faut soit rendre ce dépôt public (après avoir vérifié tout son historique), soit retirer ces deux liens.
+> `Projets-Runbooks` est **privé** : un lien vers ce dépôt renverrait une erreur 404 à un visiteur. Les cartes Cisco/Zabbix et CIS n'ont donc **pas de lien** (retirés le 2026-11-20). Si le dépôt devient public un jour (après vérification de tout son historique), les liens pourront être remis.
+
+## Vérification automatique des liens
+
+Le workflow [`links.yml`](.github/workflows/links.yml) lance [lychee](https://github.com/lycheeverse/lychee) :
+
+| Étape | Fichiers | Mode | Ce qu'elle attrape |
+|---|---|---|---|
+| Liens de la page | `index.html`, `404.html` | En ligne | Un dépôt devenu privé ou renommé (erreur 404 pour un visiteur), un fichier `/assets/...` manquant |
+| Liens de la documentation | `**/*.md` | Hors ligne | Un lien cassé entre deux fichiers du dépôt |
+
+Il tourne à chaque push, à chaque pull request et **chaque lundi** : un lien peut casser sans aucun changement dans ce dépôt, par exemple quand un autre dépôt change de visibilité.
 
 ## Aperçu en local
 
@@ -120,7 +134,7 @@ La page `404.html` utilise des chemins absolus (`/assets/...`) : ouverte directe
 3. Réduire sous 520 px (mode appareil des outils de développement, par exemple 375 px de large) : titre et métadonnées des cartes l'un sous l'autre, faits « libellé puis valeur ».
 4. Activer « réduire les animations » dans le système : l'illustration du héros et la pastille d'état s'arrêtent.
 5. Sur un écran tactile (ou en émulation tactile), les liens du menu, les boutons et les liens des cartes font au moins 44 px de haut.
-6. Lecteur d'écran (NVDA, VoiceOver) : les fragments anglais (`./about`, `LINK STATUS: UP`) sont lus avec une voix anglaise ; la liste des liens annonce « voir les runbooks Technical Runbooks » plutôt que six « voir le… » identiques.
+6. Lecteur d'écran (NVDA, VoiceOver) : les fragments anglais (`./about`, `LINK STATUS: UP`) sont lus avec une voix anglaise ; la liste des liens annonce « voir les runbooks Technical Runbooks » plutôt que plusieurs « voir le… » identiques.
 7. Outils des navigateurs : Lighthouse (Chrome) ou l'inspecteur d'accessibilité (Firefox).
 8. Aperçu avant impression (Ctrl+P) : fond blanc, aucune barre de menu ni bouton, aucune carte coupée en deux, adresse imprimée après chaque lien de projet.
 
